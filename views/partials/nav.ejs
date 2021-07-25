@@ -1,0 +1,74 @@
+<% if (!user) { %>
+  <link rel="stylesheet" href="/stylesheets/siwg.css">
+<% } %>
+<script src="/javascripts/goose.js"></script>
+</head>
+<body>
+<header class="p-3 bg-dark text-white">
+  <nav class="container">
+    <div
+      class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
+    >
+      <ul
+        class="nav col-12 col-lg-auto me-lg-auto mb-2 mb-md-0 justify-content-center"
+      >
+        <li>
+         <h2>Logo Here</h2>
+        </li>
+        <% } %>
+      </ul>
+      <div class="text-end d-flex align-items-center">
+        <% // TODO: Add login logic here %>
+        <% if (user) { %>
+          <div id="profile-dropdown" class="dropdown text-end">
+            <a 
+              id="dropdownUser"
+              href="#"
+              class="d-block link-light text-decoration-none"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <% if(user?.profile.avatar) {%>
+                <img 
+                  class="rounded-circle avatar-img"
+                  src="<%= user.profile.avatar %>" 
+                  alt="Your avatar"
+                >
+              <% } else { %>
+                <h6>No photo yet</h6>
+              <% } %> 
+            </a>
+            <ul 
+              class="dropdown-menu bg-secondary" 
+              aria-labelledby="dropdownUser"
+            >
+              <li>
+                <a 
+                  href="/profiles/<%= user.profile._id %>" 
+                  class="dropdown-item bg-secondary text-white"
+                >
+                  My Profile
+                </a>
+              </li>
+              <li><hr class="dropdown-divider bg-secondary text-white"></li>
+              <li>
+                <a 
+                  href="/auth/logout" 
+                  class="dropdown-item bg-secondary text-white"
+                >
+                  Sign Out
+                </a>
+              </li>
+            </ul>
+          </div>
+        <% } else { %>
+          <a href="/auth/google" class="siwg-link right item">
+            <button type="submit" class="siwg">
+              <img id="siwg-image" alt="Sign in with Google" />
+            </button>
+          </a>
+        <% } %>
+      </div>
+    </div>
+  </nav>
+</header>
