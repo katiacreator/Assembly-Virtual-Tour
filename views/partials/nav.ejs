@@ -1,7 +1,6 @@
 <% if (!user) { %>
   <link rel="stylesheet" href="/stylesheets/siwg.css">
 <% } %>
-<script src="/javascripts/goose.js"></script>
 </head>
 <body>
 <header class="p-3 bg-dark text-white">
@@ -17,11 +16,10 @@
               src="/images/icons/gg.png" 
               alt="Game Goose logo" 
               class="me-3"
-              onclick="makeQuack()"
             >
         </li>
         <li class="d-flex align-items-center mb-2 mb-lg-0 fs-3">
-          <a href="/" class="text-light text-decoration-none">GG</a>
+          <a href="/" class="text-light text-decoration-none">TVA</a>
         </li>
         <li class="d-flex align-items-center ms-3 mb-2 mb-lg-0">
           <a href="/profiles" class="text-light text-decoration-none">
@@ -30,15 +28,12 @@
         </li>
         <% if (user) { %>
           <li class="d-flex align-items-center ms-3 mb-2 mb-lg-0">
-            <a href="/messages" class="text-light text-decoration-none">
-              Message Board
+            <a href="/comics" class="text-light text-decoration-none">
+              View All Files
             </a>
           </li>
         <% } %>
       </ul>
-      <form action="/games/search" method="POST" class="d-flex align-items-center me-3">
-        <input name="search" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-      </form>
       <div class="text-end d-flex align-items-center">
         <% // TODO: Add login logic here %>
         <% if (user) { %>

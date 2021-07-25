@@ -7,6 +7,7 @@ import session from 'express-session'
 import logger from 'morgan'
 import methodOverride from 'method-override'
 import passport from 'passport'
+import { passUserToView } from './middleware/middleware.js'
 
 import { router as indexRouter } from './routes/index.js'
 import { router as authRouter } from './routes/auth.js'
