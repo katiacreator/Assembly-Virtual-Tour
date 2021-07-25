@@ -24,18 +24,3 @@ const comicSchema = new Schema({
 
 const Comic = mongoose.model('Comic', comicSchema)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

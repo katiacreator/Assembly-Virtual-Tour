@@ -9,8 +9,10 @@ import methodOverride from 'method-override'
 import passport from 'passport'
 
 import { router as indexRouter } from './routes/index.js'
-import { router as usersRouter } from './routes/users.js'
 import { router as authRouter } from './routes/auth.js'
+import { router as comicsRouter } from './routes/comics.js'
+import { router as profilesRouter } from './routes/profiles.js'
+import { router as variantsRouter } from './routes/variants.js'
 
 // connect to the MongoDB with mongoose
 import('./config/database.js')
@@ -50,8 +52,10 @@ app.use(
 )
 
 app.use('/', indexRouter)
-app.use('/users', usersRouter)
 app.use('/auth', authRouter)
+app.use('/comics', comicsRouter)
+app.use('/variants', variantsRouter)
+app.use('/profiles', profilesRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
