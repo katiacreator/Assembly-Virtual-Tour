@@ -8,6 +8,8 @@ export {
   edit,
   update
 }
+/* generate badge id number goes here or on a js file */
+
 //check
 function index(req, res) {
   Profile.find({})

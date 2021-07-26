@@ -22,6 +22,19 @@
                <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Click to return to variant database">
                 <a class="btn btn-primary btn-lg" href="#" role="button">GO BACK</a>
               </button>
+               <%# This is where we'll add a button to 'variant/unvariant' a variant %> 
+    <%# if this is not my profile page          &&  the user being viewed is not in my variants list %> 
+    <% if (!profile._id.equals(userProfile._id) && !userProfile.variants.includes(profile._id)) { %>
+        <a href="/profiles/<%= profile._id %>/variant" class="btn btn-primary">
+          Add Variant
+        </a>
+      <% } %>
+      <%# if this is not my profile page          &&  the user being viewed is in my variants list %> 
+      <% if (!profile._id.equals(userProfile._id) && userProfile.variants.includes(profile._id)) { %>
+        <a href="/profiles/<%= profile._id %>/unvariant" class="btn btn-primary">
+          Remove Variant
+        </a>
+      <% } %>
           </div>
         </section>
     </main>  
