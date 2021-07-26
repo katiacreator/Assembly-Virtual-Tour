@@ -59,6 +59,8 @@
       >
         Edit Profile
       </a>
+      <br>
+      <br>
       <a 
         class="btn btn-danger ms-4"
         role="button" 
@@ -67,95 +69,28 @@
         Logout
       </a>
     <% } %>
-    <%# This is where we'll add a button to 'friend/unfriend' a user %> 
-    <%# if this is not my profile page          &&  the user being viewed is not in my friends list %> 
-    <% if (!profile._id.equals(userProfile._id) && !userProfile.friends.includes(profile._id)) { %>
-      <a href="/profiles/<%= profile._id %>/friend" class="btn btn-primary">
-        Add Friend
-      </a>
-    <% } %>
-    <%# if this is not my profile page          &&  the user being viewed is in my friends list %> 
-    <% if (!profile._id.equals(userProfile._id) && userProfile.friends.includes(profile._id)) { %>
-      <a href="/profiles/<%= profile._id %>/unfriend" class="btn btn-primary">
-        Remove Friend
-      </a>
-    <% } %>
   </section>
   <section class="bg-light pt-3">
-    <div class="container">
-      <h2 class="mb-3"><%= profile.name %>'s friends</h2>
-      <div
-        class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g1 px-1"
-      >
-      <%# This is where we'll display our friends %>
-      <% profile.friends.forEach(friend => { %>
-        <div class="col">
-          <a class="text-decoration-none" href="/profiles/<%= friend._id %>">
-            <div class="card mb-4 shadow-sm">
-              <% if (friend.avatar) { %>
-                <img
-                  class="card-img-top"
-                  src="<%= friend.avatar %>"
-                  alt="<%= friend.name %>'s avatar"
-                  width="100%"
-                />
-              <% } else {%>
-                <img
-                  class="card-img-top"
-                  src="/images/icons/user.png"
-                  alt="A placeholder avatar"
-                  width="100%"
-                  />
-                  <% } %>
-                  <div class="card-body">
-                    <p class="card-title text-dark fs-5"><%= friend.name %></p>
-                    <p class="card-text text-dark fs-6 mt-0">
-                      Joined <%= friend.createdAt.toLocaleDateString() %>
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </div>
-        <% }) %> 
-      </div>
-      <h2 class="mb-3"><%= profile.name %>'s games</h2>
-      <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g5 px-1">
-        <%# This is where we'll loop over our games! %> 
-        <% games.forEach(game => { %>
-          <div class="col">
-            <div class="card bg-dark shadow-sm mb-3">
-              <% if (game.imageUrl) { %>
-                <img
-                  class="card-img-top"
-                  src="<%= game.imageUrl %>"
-                  alt="<%= game.name %>'s image"
-                  width="100%"
-                />
-              <% } else {%>
-                <img
-                  class="card-img-top"
-                  src="/images/icons/user.png"
-                  alt="A placeholder avatar"
-                  width="100%"
-                />
-              <% } %>
-              <div class="card-body">
-                <p class="card-title fs-4 text-light"><%= game.name %></p>
-                <p class="card-text fs-5 text-light">
-                  Released: <%= game?.released.toLocaleDateString() %>
-                </p>
-                <a 
-                  href="/games/<%= game.rawgId %>" 
-                  class="btn btn-primary"
-                >
-                  Details
-                </a>
-              </div>
-            </div>
-          </div>
-        <% }) %>
-      </div>
-    </div>
+    <!-- placeholder -->
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
   </section>
 </main>
 
