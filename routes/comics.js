@@ -7,12 +7,14 @@ export {
 
 const router = Router()
 
-/* router.get('/', isLoggedIn, comicsCtrl.index)
-router.get('/:id', isLoggedIn, comicsCtrl.show)
-router.post('/', isLoggedIn, comicsCtrl.create)
-router.put('/:id', isLoggedIn, comicsCtrl.update)
-router.get('/:id/edit', isLoggedIn, comicsCtrl.edit)
-router.delete('/:id/edit', isLoggedIn, comicsCtrl.delete) */
+// localhost:3000/api/comics RETRIEVE ALL COLLECTIONS
+router.get('/', comicCtrl.index)
+// localhost:3000/api/comics/:id RETRIEVE A SINGLE COLLECTION
+router.get('/:id', comicCtrl.show)
+// localhost:3000/api/comics ADD A DOCUMENT TO COLLECTION
+router.post('/', comicCtrl.create)
+// localhost:3000/api/comics/:id DELETE A SINGLE DOCUMENT
+router.delete('/:id', comicCtrl.delete)
 
 
 function isLoggedIn(req, res, next) {

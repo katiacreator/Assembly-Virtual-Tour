@@ -8,7 +8,7 @@ export {
 const profileSchema = new Schema({
   name: String,
   avatar: String,
-  role: String,
+  role: {type: String, default: "Engineering Fellow"},
   badgeId: Number,
   //reference variant Schema which is an object
   variant: {type: Schema.Types.ObjectId, ref: "Variant"},
