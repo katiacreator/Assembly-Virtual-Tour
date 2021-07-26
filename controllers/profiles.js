@@ -6,9 +6,10 @@ export {
   index,
   show,
   edit,
-  update
+  update,
+  showBadge,
 }
-/* generate badge id number goes here or on a js file */
+
 
 //check
 function index(req, res) {
@@ -68,6 +69,27 @@ function show(req, res) {
           // Profile of the logged in user
           userProfile,
           title: `${profile.name}'s profile`,
+        })
+      })
+    })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
+}
+
+function showBadge(req, res) {
+  // Find the profile that was clicked
+  Profile.findById(req.params.id)
+  .then(profile => {
+      Profile.findById(req.user.profile)
+      .then(userProfile => {
+        res.render('profiles/show', {
+          // Profile of the user clicked
+          profile,
+          // Profile of the logged in user
+          userProfile,
+          title: `${profile.name}'s badge`,
         })
       })
     })
