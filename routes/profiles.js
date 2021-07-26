@@ -7,10 +7,10 @@ export {
 
 const router = Router()
 
-/* router.get('/', isLoggedIn, profilesCtrl.index)
+router.get('/', isLoggedIn, profilesCtrl.index)
 router.get('/:id', isLoggedIn, profilesCtrl.show)
 router.put('/:id', isLoggedIn, profilesCtrl.update)
-router.get('/:id/edit', isLoggedIn, profilesCtrl.edit) */
+router.get('/:id/edit', isLoggedIn, profilesCtrl.edit)
 
 
 function isLoggedIn(req, res, next) {

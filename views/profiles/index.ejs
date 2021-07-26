@@ -1,80 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile & Welcome Screen</title>
-</head>
-<body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">TVA</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">View/Edit Profile-</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <!-- Insert Avatar -->
-                <p>TVA Database Dropdown Menu</p>
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">View Variant Details</a>
-                <a class="dropdown-item" href="#">View Variant Files</a>
-                <a class="dropdown-item" href="#">View All Variant Files</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Logout</a>
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<main class="bg-light">
+  <div class="container py-5 px-3">
+    <div 
+      class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g5 g-sm-3 g-xxl-5 px-sm-5 px-4"
+    >
+      <% profiles.forEach(profile => { %>
+        <div class="col">
+          <a class="text-decoration-none" href="/profiles/<%= profile._id %>">
+            <div class="card shadow-sm">
+              <% if (profile.avatar) { %>
+                <img
+                  class="card-img-top"
+                  src="<%= profile.avatar %>"
+                  alt="<%= profile.name %>'s avatar"
+                  width="100%"
+                  height="170"
+                />
+              <% } else {%>
+                <img
+                  class="card-img-top"
+                  src="/images/icons/user.png"
+                  alt="A placeholder avatar"
+                  width="100%"
+                  height="170"
+                />
+              <% } %>
+              <div class="card-body">
+                <p class="card-title fs-5 text-dark mb-0">
+                  <%= profile.name %>
+                </p>
+                <p class="card-text text-dark fs-6 mt-0">
+                  Joined <%= profile.createdAt.toLocaleDateString() %>
+                </p>
               </div>
-            <!-- </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#">Disabled</a>
-            </li> -->
-          </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="logout" aria-label="Logout">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
-          </form>
+            </div>
+          </a>
         </div>
-      </nav>
-    <section class="profile">
-        <!-- User's Profile Card to the left -->
-        <div class="profile-card" style="width: 18rem;">
-            <!-- Google Avatar goes here -->
-            <img class="card-img-top" src="..." alt="Card image cap">
-            <div class="card-body">
-              <h5 class="profile-name">Profile Name</h5>
-              <p class="profile-role">Software Engineer</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-    </section>
-    <section class="welcome-slides">
-        <!-- Welcome text to the right -->
-        <p class="welcome-text">  </p>
-        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <p class="d-block w-100" src="..." alt="First slide">Welcome to the Timeline Variance Authority virtual database tour. As a software engineering fellow at General Assembly, you've been hand-picked to join us in managing our infinite database of timeline variants in preparation for the Multiversal War!</p>
-              </div>
-              <div class="carousel-item">
-                <p class="d-block w-100" src="..." alt="Second slide">You will be assigned an employee badge to begin this tutorial on how to manage top-secret files about a select group of variants. You'll be able to retrieve files, view details about known variants and their aliases, collect comic cards featuring the variant for your own reLogout interests, and track variants in real-time on our map dashboard.</p>
-              </div>
-              <div class="carousel-item">
-                <p class="d-block w-100" src="..." alt="Third slide">This will prepare you for your new role as an agent at the Timeline Variance Authority. For All Time. Always.</p>
-                <!-- link to next screen -->
-                <a href="#" class="btn btn-primary startBtn">Let's Get Started!</a>
-              </div>
-            </div>
-          </div>
-    </section>
-</body>
-</html>
+      <% }) %>
+    </div>
+  </div>
+</main>
+
+<%- include('../partials/footer') %>
