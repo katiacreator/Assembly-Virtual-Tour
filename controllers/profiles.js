@@ -1,6 +1,6 @@
 import { Profile } from '../models/profile.js'
-import { Comic } from "../models/comic.js"
-import { Variant } from "../models/variant.js"
+// import { Comic } from "../models/comic.js"
+// import { Variant } from "../models/variant.js"
 
 export {
   index,
@@ -9,6 +9,17 @@ export {
   update
 }
 
+function index(req, res) {
+  Profile.find({})
+  .then(profiles => {
+    res.render('profiles/index', {
+      title: "TVA Agent Profiles",
+      profiles,
+    })
+  })
+}
+
+/* 
 function index(req, res, next) {
   res.render('profiles/index', {
     profiles: profiles,
@@ -16,6 +27,8 @@ function index(req, res, next) {
     user: req.user
   })
 }
+*/
+
 
 
 function update(req, res) {
