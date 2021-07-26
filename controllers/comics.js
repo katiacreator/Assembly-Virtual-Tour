@@ -2,23 +2,35 @@ import { Comic } from '../models/comic.js'
 import axios from 'axios'
 import md5 from 'md5'
 
+let ts = Date.now()
+let hashKey = md5(`${ts}+${process.env.MARVEL_PRIVATE_API_KEY}+${process.env.MARVEL_PUBLIC_API_KEY}`)
+console.log(`this is my timestamp: ${ts}`)
+console.log(`this is my hashkey: ${hashKey}`)
+
 export {
   index,
-  show,
+  showComic,
   create,
   deleteComic as delete
 }
 
-function show(req, res) {
-  let hashKey = md5(process.env.MARVEL_PUBLIC_API_KEY)
-  console.log(hashKey)
+function showComic(req, res) {
+  //req.params.id needs to match marvels character id
     axios
-    .get(`https://gateway.marvel.com:443/v1/public/characters/${req.params.id}/comics?noVariants=false&limit=5&ts=1&apikey=${process.env.MARVEL_PUBLIC_API_KEY}&hash=${hashKey}`)
-    .then((res) => {
-      console.log(res.data.id)
+    .get(`https://gateway.marvel.com:443/v1/public/characters/${req.params.id}/comics?noVariants=false&limit=5&${ts}&apikey=${process.env.MARVEL_PUBLIC_API_KEY}&hash=${hashKey}`)
+    .then((response) => {
+      res.render("comics/show", {
+        title: response.data.results.title,
+        format: response.data.results.format,
+        pageCount: response.data.results.pageCount,
+        thumbnail: `${response.data.results.thumbnail.path}${response.data.results.thumbnail.path}`
       })
-}
-
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect('/')
+    })
+  }
 
 
 // Alternate method

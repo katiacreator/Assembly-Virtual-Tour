@@ -30,11 +30,21 @@ export {
   }
   
   function show(req, res) {
-    Variant.findById(req.params.id)
-    .then(variant => {
-      res.json(variant)
-    })
-  }
+    //req.params.id needs to match marvels character id
+      axios
+      .get(`https://gateway.marvel.com:443/v1/public/characters/${req.params.variantId}/limit=1&${ts}&apikey=${process.env.MARVEL_PUBLIC_API_KEY}&hash=${hashKey}`)
+      .then((response) => {
+        res.render("variants/show", {
+          name: response.data.results.name,
+          thumbnail: `${response.data.results.thumbnail.path}${response.data.results.thumbnail.path}`,
+          fileTotal: response.data.results.comics.available
+        })
+      })
+      .catch(err => {
+        console.log(err)
+        res.redirect('/')
+      })
+    }
   
   function create(req, res) {
     Variant.create(req.body)
