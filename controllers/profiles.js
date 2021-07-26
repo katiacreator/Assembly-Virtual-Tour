@@ -8,7 +8,7 @@ export {
   edit,
   update
 }
-
+//check
 function index(req, res) {
   Profile.find({})
   .then(profiles => {
@@ -28,8 +28,6 @@ function index(req, res, next) {
   })
 }
 */
-
-
 
 function update(req, res) {
   Profile.findByIdAndUpdate(req.params.id, req.body, {new: true})
