@@ -8,13 +8,13 @@ export {
 const router = Router()
 
 // localhost:3000/api/variants RETRIEVE ALL COLLECTIONS
-router.get('/', variantCtrl.index)
+router.get('/', variantsCtrl.index)
 // localhost:3000/api/variants/:id RETRIEVE A SINGLE COLLECTION
-router.get('/:id', variantCtrl.show)
+router.get('/:id', variantsCtrl.show)
 // localhost:3000/api/variants ADD A DOCUMENT TO COLLECTION
-router.post('/', variantCtrl.create)
+router.post('/', variantsCtrl.create)
 // localhost:3000/api/variants/:id DELETE A SINGLE DOCUMENT
-router.delete('/:id', variantCtrl.delete)
+router.delete('/:id', variantsCtrl.delete)
 
 
 function isLoggedIn(req, res, next) {
