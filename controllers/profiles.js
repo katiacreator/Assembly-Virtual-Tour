@@ -24,7 +24,7 @@ function index(req, res, next) {
     });
   });
 }
-
+//check-this sucessfully updated my profile name and avatar at localhost/profiles/:id
 function update(req, res) {
   Profile.findByIdAndUpdate(req.params.id, req.body, { new: true })
     .then((profile) => {
@@ -49,7 +49,7 @@ function edit(req, res) {
       res.redirect("/");
     });
 }
-
+//check-this successfully shows my profile card and shows only my profile at localhost/profiles/:id
 function show(req, res) {
   // Find the profile that was clicked
   Profile.findById(req.params.id)
