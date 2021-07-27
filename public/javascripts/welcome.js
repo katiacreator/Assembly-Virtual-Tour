@@ -1,3 +1,4 @@
+console.log("this is connected properly to index.ejs")
 /* do pagination with these buttons */
 const nextBtn = document.getElementById('nextBtn')
 //console.log('nextBtn: ', nextBtn);

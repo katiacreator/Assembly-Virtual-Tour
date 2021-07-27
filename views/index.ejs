@@ -1,10 +1,26 @@
 <%- include('partials/html-head') %>
-<%- include('partials/nav') %>
+<%- include('partials/home-nav') %>
 
 <main>
     <% if (user) { %>
         <h1><%= title %></h1> 
         <p>TESTING 1,2,3</p> 
+        <section class="welcome-slides" id="welcome-screen">
+            <!-- dynamically change on js file-->
+            <div>
+                <p>Welcome to the Timeline Variance Authority virtual database tour. As a software engineering fellow at General Assembly, you've been hand-picked to join us in managing our infinite database of timeline variants in preparation for the Multiversal War!</p>
+                <p>This is Page 1</p>
+                <button id="nextBtn">Next</button>
+                <!-- ADD CLASS HIDE IN STYLESHEET! SO THIS DOESNT SHOW ON LOAD -->
+                <button id="oneBtn" class="hide">Page1</button>
+                <!-- ADD CLASS HIDE IN STYLESHEET! SO THIS DOESNT SHOW ON LOAD -->
+                <button id="twoBtn" class="hide">Page 2</button>
+                <!-- ADD CLASS HIDE IN STYLESHEET! SO THIS DOESNT SHOW ON LOAD -->
+                <button id="threeBtn" class="hide">Page3</button>
+                <!-- ADD CLASS HIDE IN STYLESHEET! SO THIS DOESNT SHOW ON LOAD -->
+                <a href="/profiles/show-badge" class="btn btn-primary btn hide" id="startBtn">Let's Get Started!</a>
+              </div>
+        </section>
         <!-- put some big logo image here --> 
         <img src="" alt="timekeepers">
         <!-- a confetti  -->     
