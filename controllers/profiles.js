@@ -19,10 +19,8 @@ export { index, show, edit, update, showBadge };
 function index(req, res, next) {
   Profile.find({}).then((profiles) => {
     res.render("profiles/index", {
-      title: "All Profiles",
+      title: "All User Profiles",
       profiles,
-      name: req.query.name,
-      user: req.user,
     });
   });
 }
@@ -37,7 +35,7 @@ function update(req, res) {
       res.redirect("/");
     });
 }
-
+//check-this sucessfully edited my profile name and avatar at localhost/profiles/:id
 function edit(req, res) {
   Profile.findById(req.params.id)
     .then((profile) => {
@@ -56,13 +54,18 @@ function show(req, res) {
   // Find the profile that was clicked
   Profile.findById(req.params.id)
     .then((profile) => {
-      Profile.findById(req.user.profile).then((userProfile) => {
+      console.log("profile found", profile)
+      // Find the profile of the current logged in user
+      Profile.findById(req.user.profile).
+      then((userProfile) => {
+        console.log("userprofile found", userProfile )
         res.render("profiles/show", {
           // Profile of the user clicked
           profile,
           // Profile of the logged in user
           userProfile,
           title: `${profile.name}'s profile`,
+          text: "this is a test!"
         });
       });
     })
