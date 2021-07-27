@@ -1,6 +1,7 @@
+console.log("this is properly connect to index.ejs")
 /* do pagination with these buttons */
 const pEl = document.getElementById("welcome-text");
-console.log("pEl: ", pEl);
+//console.log("pEl: ", pEl);
 const oneBtn = document.getElementById("oneBtn");
 //console.log('oneBtn: ', oneBtn);
 const twoBtn = document.getElementById("twoBtn");
