@@ -9,25 +9,47 @@ console.log(`this is my timestamp: ${ts}`)
 console.log(`this is my hashkey: ${hashKey}`)
 
 export {
-    index,
-    show,
-    create,
-    update,
+    // index,
+    // show,
+    createVariant,
+    updateVariant,
     deleteVariant as delete
   }
 
+  //updates checklist where user has changed checkbox
+  function updateVariant(req, res) {
+    Variant.findByIdAndUpdate(req.params.id, req.body, {new: true})
+    .then( variant => {
+      res.redirect(`/variants/${variant._id}`)
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect('/')
+    })
+  }
+ 
   //this deletes a variant off user's checklist
   function deleteVariant(req, res){
-    Variant.findByIdAndDelete(req.params.id, function(err, variant){
+    Variant.findByIdAndDelete(req.params.id)
+    .then( variant => {
       res.redirect('/variants')
     })
+    .catch(err => {
+      console.log(err)
+      res.redirect('/')
+    }) 
   }
 
   //this creates a variant to be found
-  function create(req, res) {
+  function createVariant(req, res) {
     req.body.found = !!req.body.found
-    Variant.create(req.body).then(()=> {
+    Variant.create(req.body)
+    .then( variant => {
       res.redirect('/variants')
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect('/')
     })
   }
   /* 
@@ -91,16 +113,9 @@ export {
   */
 
 
+/* 
 
-
-
-
-
-
-
-
-
-  
+ 
   function show(req, res) {
     //req.params.id needs to match marvels character id
       axios
@@ -117,6 +132,15 @@ export {
         res.redirect('/')
       })
   }
+
+
+
+
+
+*/
+
+
+ 
   
 /*
 function create(req, res) {

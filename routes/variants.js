@@ -7,13 +7,15 @@ export {
 
 const router = Router()
 
-// localhost:3000/api/variants RETRIEVE ALL COLLECTIONS
-router.get('/', variantsCtrl.index)
-// localhost:3000/api/variants/:id RETRIEVE A SINGLE COLLECTION
-router.get('/:id', variantsCtrl.show)
-// localhost:3000/api/variants ADD A DOCUMENT TO COLLECTION
-router.post('/', variantsCtrl.create)
-// localhost:3000/api/variants/:id DELETE A SINGLE DOCUMENT
+// localhost:3000/variants RETRIEVE ALL COLLECTIONS
+//router.get('/', variantsCtrl.index)
+// localhost:3000/variants/:id RETRIEVE A SINGLE COLLECTION
+//router.get('/:id', variantsCtrl.show)
+// localhost:3000/variants ADD A DOCUMENT TO COLLECTION
+router.post('/', variantsCtrl.createVariant)
+// localhost:3000/variants/:id UPDATE A SINGLE DOCUMENT
+router.put('/', variantsCtrl.updateVariant)
+// localhost:3000/variants/:id DELETE A SINGLE DOCUMENT
 router.delete('/:id', variantsCtrl.delete)
 
 
