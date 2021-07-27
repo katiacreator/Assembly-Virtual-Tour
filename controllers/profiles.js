@@ -76,6 +76,7 @@ function show(req, res) {
 }
 
 function showBadge(req, res) {
+  console.log("this was reached")
   // Find the profile that was clicked
   Profile.findById(req.params.id)
     .then((profile) => {
