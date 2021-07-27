@@ -8,6 +8,7 @@
     >
       <% profiles.forEach(profile => { %>
         <div class="col">
+          <!-- user clicks on profile to edit profile from this view thats why this is an a link -->
           <a class="text-decoration-none" href="/profiles/<%= profile._id %>">
             <div class="card shadow-sm">
               <% if (profile.avatar) { %>
