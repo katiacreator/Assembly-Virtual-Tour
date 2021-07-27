@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Variant Tracker</title>
+</head>
+<body>
+  <h1>Variant Tracker</h1>
+  <p>Create a list of variants you would like to help us track. Check them off your list if we have found them and entered them into our database.</p>
+  <form action="/variants" method="POST">
+  <input type="text" 
+  name="name" 
+  placeholder="variant Name"
+  >
+  <input type="checkbox" name="found">
+  <br>
+  <button>Add Variant</button>
+  </form>
+  <% if (variants.length) { %> 
+  <% variants.forEach(variant => { %> 
+    <%= variant.name %><br> 
+   - <%= variant.prune ? 'is Found' : 'Not Found' %>  
+   <form action="/variants/<%= variant._id %>?_method=DELETE" method="POST">
+    <button>X</button>
+  </form>
+  <% }) %> 
+    <% } else { %>
+      <h3>No variants</h3>
+    <% } %> 
+</body>
+</html>
