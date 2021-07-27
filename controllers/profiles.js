@@ -17,6 +17,7 @@ export { index, show, edit, update, showBadge };
 
 //check-this sucessfully rendered my profile card to localhost/profiles
 function index(req, res, next) {
+  console.log("index-this was reached")
   Profile.find({}).then((profiles) => {
     res.render("profiles/index", {
       title: "All User Profiles",
@@ -26,6 +27,7 @@ function index(req, res, next) {
 }
 //check-this sucessfully updated my profile name and avatar at localhost/profiles/:id
 function update(req, res) {
+  console.log("update-this was reached")
   Profile.findByIdAndUpdate(req.params.id, req.body, { new: true })
     .then((profile) => {
       res.redirect(`/profiles/${profile._id}`);
@@ -37,6 +39,7 @@ function update(req, res) {
 }
 //check-this sucessfully edited my profile name and avatar at localhost/profiles/:id
 function edit(req, res) {
+  console.log("edit-this was reached")
   Profile.findById(req.params.id)
     .then((profile) => {
       res.render("profiles/edit", {
@@ -51,6 +54,7 @@ function edit(req, res) {
 }
 //check-this successfully shows my profile card and shows only my profile at localhost/profiles/:id
 function show(req, res) {
+  console.log("show-this was reached")
   // Find the profile that was clicked
   Profile.findById(req.params.id)
     .then((profile) => {

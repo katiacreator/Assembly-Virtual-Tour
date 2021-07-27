@@ -1,6 +1,5 @@
 import { Router } from 'express'
 import * as indexCtrl from '../controllers/index.js'
-import * as profilesCtrl from '../controllers/profiles.js'
 export {
   router
 }

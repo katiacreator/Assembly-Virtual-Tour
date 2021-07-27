@@ -5,3 +5,7 @@
 body{
   background: #000;
 }
+
+.hide{
+  display: none;
+}
