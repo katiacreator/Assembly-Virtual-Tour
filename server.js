@@ -46,6 +46,9 @@ app.use(
 app.use(passport.initialize())
 app.use(passport.session())
 
+// custom middleware
+app.use(passUserToView)
+
 app.use(
   express.static(
     path.join(path.dirname(fileURLToPath(import.meta.url)), 'public')
