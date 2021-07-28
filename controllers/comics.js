@@ -4,8 +4,8 @@ import md5 from 'md5'
 
 let ts = Date.now()
 let hashKey = md5(`${ts}+${process.env.MARVEL_PRIVATE_API_KEY}+${process.env.MARVEL_PUBLIC_API_KEY}`)
-console.log(`this is my timestamp: ${ts}`)
-console.log(`this is my hashkey: ${hashKey}`)
+console.log(`this is my timestamp on comics controller: ${ts}`)
+//console.log(`this is my hashkey: ${hashKey}`)
 
 export {
   index,

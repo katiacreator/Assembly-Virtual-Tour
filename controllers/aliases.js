@@ -2,6 +2,8 @@ import { Alias } from "../models/alias.js";
 
 
 export { index, show, create, indexCard }
+let ts = Date.now()
+console.log('ts on alias**********************************: ', ts);
 
 function index(req, res){
     Alias.find({})
@@ -13,13 +15,17 @@ function index(req, res){
     })
 }
 function indexCard(req, res){
+    console.log("this indexCard is firing!");
     Alias.find({})
-    .then(alias => {
-        res.render('alias',{
-            alias
+    .then(aliases => {
+        //console.log('alias: ', alias),
+        res.render('aliases/index',{
+            title: 'Alias Card Grid TEST!',
+            aliases
         })
     })
     .catch(err => {
+        console.log(`errorrrrr: ${err}`),
         res.redirect('/')
     })
 }

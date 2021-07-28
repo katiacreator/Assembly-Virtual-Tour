@@ -17,7 +17,7 @@
     <!-- navbar -->
     <!-- write a sentence explaing what this grid/db is doing and how to view it -->
 <main class="grid">
-  <% aliases.forEach(alias => { %>
+  <% aliases.forEach( alias => { %>
     <!-- user clicks on alias to edit alias from this view thats why this is an a link CHECK THAT THE A TAG IS STARTING IN THE RIGHT PLACE-->
    <a class="text-decoration-none" href="/aliases/<%= alias._id %>">
   <article>
@@ -28,8 +28,10 @@
       <img src="◉" alt="placeholder image">
       <% } %>
     <div class="text">
-      <h2 class="alias-name">alias.name</h2>
-      <p class="alias-aliasId">Id: alias.aliasId</p>
+      <%=alias.name  %> 
+      
+      <h2 class="alias-name">Name: <%=alias.name  %></h2>
+      <p class="alias-aliasId">Id: <%=alias.aliasId  %></p>
       <p class="alias-alias"> Known Alias: <%= alias.alias %></p>
       <p class="alias-comicId"> Id of Comic Character Associated with this Variant <%= alias.comicId %></p>
       <!-- since this list is long maybe this can go on the back and make this a flip card -->
