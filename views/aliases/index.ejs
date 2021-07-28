@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
+    rel="stylesheet" 
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
+    crossorigin="anonymous"
+    >
+    <link rel="stylesheet" href="/stylesheets/grid.css" />
+    <link rel="stylesheet" href="/stylesheets/welcome.css">
+    <title><%= title %></title>
+<!-- <title>Aliases Card Grid</title> -->
+<body>
+    <!-- navbar -->
+<main class="grid">
+  <% aliases.forEach(alias => { %>
+    <!-- user clicks on alias to edit alias from this view thats why this is an a link CHECK THAT THE A TAG IS STARTING IN THE RIGHT PLACE-->
+   <a class="text-decoration-none" href="/aliases/<%= alias._id %>">
+  <article>
+     <!-- Google Avatar goes here -->
+     <% if (alias.avatar) { %><%# if an avatar exists %> 
+    <img src="" alt="alias avatar">
+    <% } else {%>
+      <img src="" alt="placeholder avatar">
+      <% } %>
+    <div class="text">
+      <h2 class="alias-name">alias.name</h2>
+      <p class="alias-role">alias.role</p>
+      <p class="alias-joined">  Joined <%= alias.createdAt.toLocaleDateString() %></p>
+      <button>PLACEHOLDER</button>
+    </div>
+  </article>
+</a>
+  <% }) %>
+</main>
+</body>
+</html>    
