@@ -1,3 +1,4 @@
+import { Router } from 'express'
 import * as aliasesCtrl from "../controllers/aliases.js"
 
 export {
