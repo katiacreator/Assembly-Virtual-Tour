@@ -1,7 +1,7 @@
 import { Alias } from "../models/alias.js";
 
 
-export { index, show, create, indexCard }
+export { index, show, create, indexCard, update, deleteAlias as delete }
 let ts = Date.now()
 console.log('ts on alias**********************************: ', ts);
 
@@ -49,3 +49,23 @@ function create(req,res){
         res.json(err)
     })
 }
+
+function update(req, res) {
+    Alias.findByIdAndUpdate(req.params.id, req.body, {new: true})
+    .then((alias) => {
+      res.json(alias)
+    })
+    .catch(err => {
+        res.json(err)
+    })
+  }
+
+function deleteAlias(req, res) {
+    Alias.findByIdAndDelete(req.params.id, req.body, {new: true})
+    .then((alias) => {
+      res.json(alias)
+    })
+    .catch(err => {
+        res.json(err)
+    })
+  }

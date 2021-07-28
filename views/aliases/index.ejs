@@ -23,13 +23,11 @@
   <article>
      <!-- Image goes here -->
      <% if (alias.image) { %><%# if an image exists %> 
-    <%= alias.image %> 
+    <img src="<%= alias.image %>" alt="<%= alias.name %>'s comic book image" height="300px" width="300px" />
     <% } else {%>
       <img src="◉" alt="placeholder image">
       <% } %>
     <div class="text">
-      <%=alias.name  %> 
-      
       <h2 class="alias-name">Name: <%=alias.name  %></h2>
       <p class="alias-aliasId">Id: <%=alias.aliasId  %></p>
       <p class="alias-alias"> Known Alias: <%= alias.alias %></p>

@@ -15,6 +15,10 @@ router.get('/index', aliasesCtrl.indexCard)
 router.get('/:id', aliasesCtrl.show)
 // localhost:3000/aliases ADD A DOCUMENT TO COLLECTION
 router.post('/', aliasesCtrl.create)
+// localhost:3000/aliases UPDATE A DOCUMENT TO COLLECTION
+router.put('/:id', aliasesCtrl.update)
+// localhost:3000/aliases DELETE A DOCUMENT TO COLLECTION
+router.delete('/:id', aliasesCtrl.delete)
 
 
 function isLoggedIn(req, res, next) {
