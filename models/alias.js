@@ -17,7 +17,9 @@ const aliasSchema = new Schema(
     //reference comics Schema which is an array of secret files/comics for this alias
     comics: [{ type: Schema.Types.ObjectId, ref: "Comic" }],
     //this is the marvel character id! will need for comics database to MATCH!
-    aliasId: Number,
+    aliasId: Number,/* same as marvel id for comic character with alias name */
+    comicId: Number /* same as marvel id for comic character id with superbeing name or same as alias id if no alias name found in marvel api
+     */
   },
   {
     timestamps: true,
