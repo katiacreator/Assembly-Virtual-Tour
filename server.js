@@ -14,6 +14,7 @@ import { router as authRouter } from './routes/auth.js'
 import { router as comicsRouter } from './routes/comics.js'
 import { router as profilesRouter } from './routes/profiles.js'
 import { router as variantsRouter } from './routes/variants.js'
+import { router as aliasesRouter } from './routes/aliases.js'
 
 // connect to the MongoDB with mongoose
 import('./config/database.js')
@@ -60,6 +61,7 @@ app.use('/auth', authRouter)
 app.use('/comics', comicsRouter)
 app.use('/variants', variantsRouter)
 app.use('/profiles', profilesRouter)
+app.use('/aliases', aliasesRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
