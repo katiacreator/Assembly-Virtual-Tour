@@ -15,21 +15,28 @@
 <!-- <title>Aliases Card Grid</title> -->
 <body>
     <!-- navbar -->
+    <!-- write a sentence explaing what this grid/db is doing and how to view it -->
 <main class="grid">
   <% aliases.forEach(alias => { %>
     <!-- user clicks on alias to edit alias from this view thats why this is an a link CHECK THAT THE A TAG IS STARTING IN THE RIGHT PLACE-->
    <a class="text-decoration-none" href="/aliases/<%= alias._id %>">
   <article>
-     <!-- Google Avatar goes here -->
-     <% if (alias.avatar) { %><%# if an avatar exists %> 
-    <img src="" alt="alias avatar">
+     <!-- Image goes here -->
+     <% if (alias.image) { %><%# if an image exists %> 
+    <%= alias.image %> 
     <% } else {%>
-      <img src="" alt="placeholder avatar">
+      <img src="◉" alt="placeholder image">
       <% } %>
     <div class="text">
       <h2 class="alias-name">alias.name</h2>
-      <p class="alias-role">alias.role</p>
-      <p class="alias-joined">  Joined <%= alias.createdAt.toLocaleDateString() %></p>
+      <p class="alias-aliasId">Id: alias.aliasId</p>
+      <p class="alias-alias"> Known Alias: <%= alias.alias %></p>
+      <p class="alias-comicId"> Id of Comic Character Associated with this Variant <%= alias.comicId %></p>
+      <!-- since this list is long maybe this can go on the back and make this a flip card -->
+      <p class="alias-comicsTotal"> Total Comics featuring this Variant# <%= alias.comicsTotal %></p>
+      <p class="alias-seriesTotal"> Total Series featuring this Variant# <%= alias.seriesTotal %></p>
+      <p class="alias-storiesTotal"> Total Stories featuring this Variant# <%= alias.storiesTotal %></p>
+      <p class="alias-eventsTotal"> Total Iconic Events featuring this Variant# <%= alias.eventsTotal %></p>
       <button>PLACEHOLDER</button>
     </div>
   </article>
