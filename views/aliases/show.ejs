@@ -17,7 +17,7 @@
     <!-- navbar -->
     <!-- write a sentence explaing what this grid/db is doing and how to view it -->
 <main class="grid">
-  <% aliases.forEach( alias => { %>
+ 
   <article>
      <!-- Image goes here -->
      <% if (alias.image) { %><%# if an image exists %> 
@@ -36,13 +36,13 @@
       <p class="alias-storiesTotal"> Total Stories featuring this Variant# <%= alias.storiesTotal %></p>
       <p class="alias-eventsTotal"> Total Iconic Events featuring this Variant# <%= alias.eventsTotal %></p>
       <!-- when they click this button the image div slides up to reveal the details I CAN DO THIS! -->
-      <a class="text-decoration-none btn" id="statsBtn" href="/aliases/<%= alias._id %>/show">
+      <a class="text-decoration-none btn" id="statsBtn" href="/aliases/index/<%= alias._id %>/show">
         <button class="btn btn-danger">View Stats</button>
       </a>
     </div>
   </article>
 </a>
-  <% }) %>
+
 </main>
 </body>
-</html>    
+</html>   

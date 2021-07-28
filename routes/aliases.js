@@ -13,6 +13,8 @@ router.get('/', aliasesCtrl.index)
 router.get('/index', aliasesCtrl.indexCard)
 // localhost:3000/aliases/:id RETRIEVE A SINGLE COLLECTION
 router.get('/:id', aliasesCtrl.show)
+// localhost:3000/aliases/index/:id/ RETRIEVE A SINGLE COLLECTION 
+router.get('/:id/show', aliasesCtrl.showCard)
 // localhost:3000/aliases ADD A DOCUMENT TO COLLECTION
 router.post('/', aliasesCtrl.create)
 // localhost:3000/aliases UPDATE A DOCUMENT TO COLLECTION

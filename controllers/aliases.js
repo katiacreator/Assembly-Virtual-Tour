@@ -1,7 +1,7 @@
 import { Alias } from "../models/alias.js";
 
 
-export { index, show, create, indexCard, update, deleteAlias as delete }
+export { index, show, create, indexCard, showCard, update, deleteAlias as delete }
 let ts = Date.now()
 console.log('ts on alias**********************************: ', ts);
 
@@ -21,6 +21,21 @@ function indexCard(req, res){
         //console.log('alias: ', alias),
         res.render('aliases/index',{
             title: 'Alias Card Grid TEST!',
+            aliases
+        })
+    })
+    .catch(err => {
+        console.log(`errorrrrr: ${err}`),
+        res.redirect('/')
+    })
+}
+function showCard(req, res){
+    console.log("this showCard is firing!");
+    Alias.findById(req.params.id)
+    .then(aliases => {
+        //console.log('alias: ', alias),
+        res.render('aliases/:id/show',{
+            title: 'Alias Card Details TEST!',
             aliases
         })
     })
