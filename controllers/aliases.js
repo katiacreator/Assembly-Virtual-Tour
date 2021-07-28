@@ -1,7 +1,7 @@
 import { Alias } from "../models/alias.js";
 
 
-export { index, show, create }
+export { index, show, create, indexCard }
 
 function index(req, res){
     Alias.find({})
@@ -10,6 +10,17 @@ function index(req, res){
     })
     .catch(err => {
         res.json(err)
+    })
+}
+function indexCard(req, res){
+    Alias.find({})
+    .then(alias => {
+        res.render('alias',{
+            alias
+        })
+    })
+    .catch(err => {
+        res.redirect('/')
     })
 }
 
