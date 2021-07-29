@@ -27,10 +27,10 @@
       <img src="◉" alt="placeholder image">
       <% } %>
     <div class="text">
-      <h2 class="alias-name">Name: <%=alias.name  %></h2>
+      <h2 class="alias-name"><%=alias.name  %></h2>
       <p class="alias-aliasId">Id: <%=alias.aliasId  %></p>
-      <p class="alias-alias"> Alias Name: <%= alias.alias %></p>
-      <p class="alias-comicId"> Variant Id: <%= alias.comicId %></p>
+      <p class="alias-aliases"> Confirmed Aliases: <%= alias.alias %></p>
+      <p class="alias-comicId"> Variant Origin File Number: <%= alias.comicId %></p>
       <!-- since this list is long maybe this can go on the back and make this a flip card -->
       <p class="alias-comicsTotal"> Total Comics featuring this Variant# <%= alias.comicsTotal %></p>
       <p class="alias-seriesTotal"> Total Series featuring this Variant# <%= alias.seriesTotal %></p>

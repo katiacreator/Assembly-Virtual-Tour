@@ -1,7 +1,7 @@
 import { Alias } from "../models/alias.js";
 
 
-export { index, show, create, indexCard, showCard, update, deleteAlias as delete }
+export { index, show, create, update, deleteAlias as delete, indexCard, showCard }
 let ts = Date.now()
 console.log('ts on alias**********************************: ', ts);
 
@@ -12,37 +12,6 @@ function index(req, res){
     })
     .catch(err => {
         res.json(err)
-    })
-}
-function indexCard(req, res){
-    console.log("this indexCard is firing!");
-    Alias.find({})
-    .then(aliases => {
-        //console.log('alias: ', alias),
-        res.render('aliases',{
-            title: 'Alias Card Grid TEST!',
-            aliases
-        })
-    })
-    .catch(err => {
-        console.log(`errorrrrr: ${err}`),
-        res.redirect('/')
-    })
-}
-
-function showCard(req, res){
-    console.log("this showCard is firing!");
-    Alias.findById(req.params.id)
-    .then(alias => {
-        console.log('alias: ', alias),
-        res.render('aliases/show',{
-            title: 'Alias Card Details TEST!',
-            alias
-        })
-    })
-    .catch(err => {
-        console.log(`errorrrrr: ${err}`),
-        res.redirect('/')
     })
 }
 
@@ -85,3 +54,36 @@ function deleteAlias(req, res) {
         res.json(err)
     })
   }
+  
+function indexCard(req, res){
+    console.log("this indexCard is firing!");
+    Alias.find({})
+    .then(aliases => {
+        //console.log('alias: ', alias),
+        res.render('aliases',{
+            title: 'Alias Card Grid TEST!',
+            aliases
+        })
+    })
+    .catch(err => {
+        console.log(`errorrrrr: ${err}`),
+        res.redirect('/')
+    })
+}
+
+function showCard(req, res){
+    console.log("this showCard is firing!");
+    Alias.findById(req.params.id)
+    .then(alias => {
+        console.log('alias: ', alias),
+        res.render('aliases/show',{
+            title: 'Alias Card Details TEST!',
+            alias
+        })
+    })
+    .catch(err => {
+        console.log(`errorrrrr: ${err}`),
+        res.redirect('/')
+    })
+}
+
