@@ -15,18 +15,20 @@ export {
 
 function index(req, res) {
     axios
-    .get(`https://gateway.marvel.com:443/v1/public/characters/&limit=1&${ts}&apikey=${process.env.MARVEL_PUBLIC_API_KEY}&hash=${hashKey}`)
+    .get(`https://gateway.marvel.com:443/v1/public/characters?&limit=1&ts=1627326857992&apikey=deed26b7c22c2dd9105cd6babf1af2fb&hash=95c11cbecc84dc765a7a1d1c336f8464`)
     .then((response) => {
+      console.log("omg!~~~~~~~*********!!!!!!!!!!")
       res.render("comics/", {
         title: "Comics Results",
         data: response.data.results
     })
+  })
     .catch(err => {
       console.log(err)
       res.redirect('/')
     })
-  })
-} 
+}
+
 
 /* 
 function showCard(req, res){
