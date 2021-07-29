@@ -7,6 +7,8 @@
     "start": "node ./bin/www.js"
   },
   "dependencies": {
+    "animate": "^1.0.0",
+    "anime": "^0.1.2",
     "axios": "^0.21.1",
     "debug": "~2.6.9",
     "dotenv": "^10.0.0",

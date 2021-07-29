@@ -1,1 +1,41 @@
-           
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
+    rel="stylesheet" 
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
+    crossorigin="anonymous"
+    >
+    <link rel="stylesheet" href="/stylesheets/grid.css" />
+    <link rel="stylesheet" href="/stylesheets/welcome.css">
+    <title><%= title %></title>
+<!-- <title>Aliases Card Grid</title> -->
+<body>
+    <!-- navbar -->
+    <section id="alias-database-text" class="typewriter">These are all key people that are confirmed variants that the TVA is actively tracking. View each file for more information and find out the variants who they are linked to in various timelines. In the pending Multiversal War, they may play a crucial role, benevolent or nefarious, or somewhere in between.</section>
+    <!-- write a sentence explaing what this grid/db is doing and how to view it -->
+    <main class="grid">
+        <% aliases.forEach( alias => { %>
+        <article>
+            <!-- Image goes here -->
+            <% if (alias.image) { %><%# if an image exists %> 
+            <img src="<%= alias.image %>" alt="<%= alias.name %>'s comic book image" height="300px" width="300px" />
+            <% } else {%>
+            <img src="◉" alt="placeholder image">
+            <% } %>
+            <div class="text">
+            <h2 class="alias-name"><%=alias.name  %></h2>
+            <p class="alias-aliasId">File: <%=alias.aliasId  %></p>
+            <a class="text-decoration-none btn" id="statsBtn" href="/aliases/<%= alias._id %>">
+                <button class="btn btn-danger">View Record</button>
+            </a>
+            </div>
+        </article>
+        </a>
+        <% }) %>
+    </main>
+</body>
+</html>  

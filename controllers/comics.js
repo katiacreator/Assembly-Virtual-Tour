@@ -8,12 +8,26 @@ console.log(`this is my timestamp on comics controller: ${ts}`)
 //console.log(`this is my hashkey: ${hashKey}`)
 
 export {
-  //index,
+  index,
   //showCard,
   // showComic,
 }
 
-
+function index(req, res){
+  console.log("this comic index is firing!");
+  Alias.find({})
+  .then(aliases => {
+      //console.log('alias: ', alias),
+      res.render('aliases',{
+          title: 'Alias Card Grid TEST!',
+          aliases
+      })
+  })
+  .catch(err => { 
+      console.log(`errorrrrr: ${err}`),
+      res.redirect('/')
+  })
+}
 
 /* 
 function showCard(req, res){
