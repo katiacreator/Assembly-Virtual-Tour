@@ -5,6 +5,7 @@ export { index, show, create, update, deleteAlias as delete, indexCard, showCard
 let ts = Date.now()
 console.log('ts on alias**********************************: ', ts);
 
+/* START API BUILD */
 function index(req, res){
     Alias.find({})
     .then(alias => {
@@ -54,6 +55,8 @@ function deleteAlias(req, res) {
         res.json(err)
     })
   }
+
+/* START VIEWS RENDER */
   
 function indexCard(req, res){
     console.log("this indexCard is firing!");

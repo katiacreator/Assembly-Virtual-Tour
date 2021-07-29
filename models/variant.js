@@ -8,6 +8,7 @@ export {
 const variantSchema = new Schema({
   name: String,
   found: Boolean,
+  agent: [{ type: Schema.Types.ObjectId, ref: "Profile" }],
 }, {
   timestamps: true
 })

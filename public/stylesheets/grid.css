@@ -8,6 +8,7 @@ body{
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     grid-gap: 20px;
     align-items: stretch;
+    background-color: brown;
     border: 2px black dotted;
 }
 .grid  > article {

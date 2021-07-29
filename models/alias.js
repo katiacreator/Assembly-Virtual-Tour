@@ -8,6 +8,7 @@ const aliasSchema = new Schema(
     name: String,
     image: String,
     alias: Array,
+    variants: Array,
     comicsTotal: { type: Number, default: 0 },
     seriesTotal: { type: Number, default: 0 },
     storiesTotal: { type: Number, default: 0 },
@@ -18,9 +19,9 @@ const aliasSchema = new Schema(
     comics: [{ type: Schema.Types.ObjectId, ref: "Comic" }],
     //this is the marvel character id! will need for comics database to MATCH!
     aliasId: Number,/* same as marvel id for comic character with alias name */
-    comicId: Number, /* same as marvel id for comic character id with superbeing name or same as alias id if no alias name found in marvel api
+    comicId: Number /* same as marvel id for comic character id with superbeing name or same as alias id if no alias name found in marvel api
      */
-    variants: Array
+    
   },
   {
     timestamps: true,
