@@ -10,7 +10,6 @@ import passport from 'passport'
 import { passUserToView } from './middleware/middleware.js'
 
 import { router as apiRouter } from './routes/api.js'
-import { router as api2Router } from './routes/api2.js'
 import { router as indexRouter } from './routes/index.js'
 import { router as authRouter } from './routes/auth.js'
 import { router as comicsRouter } from './routes/comics.js'
@@ -59,7 +58,6 @@ app.use(
 )
 
 app.use('/', apiRouter)
-app.use('/', api2Router)
 app.use('/', indexRouter)
 app.use('/auth', authRouter)
 app.use('/comics', comicsRouter)

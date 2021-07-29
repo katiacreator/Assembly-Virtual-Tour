@@ -11,31 +11,31 @@
     >
     <link rel="stylesheet" href="/stylesheets/grid.css" />
     <link rel="stylesheet" href="/stylesheets/welcome.css">
-    <title><%= title %></title>
-<!-- <title>Aliases Card Grid</title> -->
+  <title>Variant Tracker</title>
+</head>
 <body>
-    <!-- navbar -->
-    <section id="alias-database-text" class="typewriter">These are all key people that are confirmed variants that the TVA is actively tracking. View each file for more information and find out the variants who they are linked to in various timelines. In the pending Multiversal War, they may play a crucial role, benevolent or nefarious, or somewhere in between.</section>
-    <!-- write a sentence explaing what this grid/db is doing and how to view it -->
-    <main class="grid">
-        <% aliases.forEach( alias => { %>
-        <article>
-            <!-- Image goes here -->
-            <% if (alias.image) { %><%# if an image exists %> 
-            <img src="<%= alias.image %>" alt="<%= alias.name %>'s comic book image" height="300px" width="300px" />
-            <% } else {%>
-            <img src="◉" alt="placeholder image">
-            <% } %>
-            <div class="text">
-            <h2 class="alias-name"><%=alias.name  %></h2>
-            <p class="alias-aliasId">File: <%=alias.aliasId  %></p>
-            <a class="text-decoration-none btn" id="statsBtn" href="/aliases/<%= alias._id %>">
-                <button class="btn btn-danger">View Record</button>
-            </a>
-            </div>
-        </article>
-        </a>
-        <% }) %>
-    </main>
+  <h1>Variant Tracker</h1>
+  <!-- link to aliases database -->
+  <p>Create a list of variants you would like to help us track. Check them off your list if we have already found them and compiled information into our database. Please note we'll be reviewing your list and taking them into considerations when we give you assignments in the field.</p> 
+  <form action="/variants" method="POST">
+  <input type="text" 
+  name="name" 
+  placeholder="Variant Name"
+  >
+  <input type="checkbox" name="found">
+  <br>
+  <button>Add Variant</button>
+  </form>
+  <% if (variants.length) { %> 
+  <% variants.forEach(variant => { %> 
+    <%= variant.name %><br> 
+   - <%= variant.prune ? 'is Found' : 'Not Found' %>  
+   <form action="/variants/new<%= variant._id %>?_method=DELETE" method="POST">
+    <button>X</button>
+  </form>
+  <% }) %> 
+    <% } else { %>
+      <h3>No Variants Added</h3>
+    <% } %> 
 </body>
-</html>  
+</html>

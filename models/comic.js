@@ -9,6 +9,7 @@ const comicSchema = new Schema(
   {
     name: String,
     image: String,
+    alias: Array,
     comicsTotal: { type: Number, default: 0 },
     seriesTotal: { type: Number, default: 0 },
     storiesTotal: { type: Number, default: 0 },

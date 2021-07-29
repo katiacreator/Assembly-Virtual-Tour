@@ -7,8 +7,8 @@ export {
 
 const router = Router()
 
-// localhost:3000/api/comics RETRIEVE ALL COLLECTIONS
-router.get('/', comicsCtrl.index)
+// localhost:3000/comics RETRIEVE ALL COLLECTIONS
+router.get('/', comicsCtrl.indexComic)
 // localhost:3000/api/comics/:id RETRIEVE A SINGLE COLLECTION
 //router.get('/:id', comicsCtrl.show)
 
