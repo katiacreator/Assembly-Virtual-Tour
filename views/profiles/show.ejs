@@ -1,69 +1,106 @@
-<%- include('../partials/html-head') %>
-
-<%- include('../partials/home-nav') %>
-
-<main>
-  <section class="bg-dark text-secondary px-4 py-5 text-center">
-    <% if (profile.avatar) { %>
-      <img
-        class="image-rounded" 
-        src="<%= profile.avatar %>" 
-        alt="<%= profile.name %>'s avatar"
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link 
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
+  rel="stylesheet" 
+  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
+  crossorigin="anonymous"
+  >
+  <link rel="stylesheet" href="/stylesheets/grid.css">
+  <script defer src="/javascripts/welcome.js"></script>
+  <title><%= title %></title>
+</head>
+<body>
+  <header class="p-3 bg-dark text-white">
+    <nav class="container">
+      <div
+        class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
       >
+        <ul
+          class="nav col-12 col-lg-auto me-lg-auto mb-2 mb-md-0 justify-content-center"
+        >
+          <li class="d-flex align-items-center mb-2 mb-lg-0 fs-3">
+            <a href="/" class="text-light text-decoration-none">
+              <button>TVA</button>
+            </a>
+          </li>
+          <% if (user) { %>
+            <li class="d-flex align-items-center ms-3 mb-2 mb-lg-0">
+              <a href="/profiles" class="text-light text-decoration-none">
+                Fellows
+              </a>
+            </li>
+            <li class="d-flex align-items-center ms-3 mb-2 mb-lg-0">
+              <a href="/" class="text-light text-decoration-none">
+                WELCOME
+              </a>
+            </li>
+            <li class="d-flex align-items-center ms-3 mb-2 mb-lg-0">
+              
+                <a 
+                  href="/profiles/<%= user.profile._id %>" 
+                  class="text-light text-decoration-none"
+                >
+                  Profile
+                </a>
+            </li>
+            <li class="d-flex align-items-center ms-3 mb-2 mb-lg-0">
+              <a 
+                href="/auth/logout" 
+                class="text-light text-decoration-none"
+              >
+                Sign Out
+              </a>
+            </li>
+        </ul>
+          <% } else { %>
+            <a href="/auth/google" class="siwg-link right item">
+              <button type="submit" class="siwg">
+                <img id="siwg-image" alt="Sign in with Google" />
+              </button>
+            </a>
+          <% } %>
+        </div>
+      </div>
+    </nav>
+  </header>
+<main class="grid">
+  <article>
+    <% if (profile.avatar) { %>
+      <img src="<%= profile.avatar %>" 
+        alt="<%= profile.name %>'s avatar"
+        height="300px" width="300px">
     <% } else {%>
       <img
         src="/images/icons/user.png" 
         alt="A placeholder avatar"
-      >
+        height="300px" width="300px">
     <% } %> 
-    <h1 class="display-5 fw-bold text-white pt-2"><%= profile.name %></h1>
-    <div class="container py-4">
-      <table class="table table-dark table-striped align-middle">
-        <tbody>
+    <div class="text"> 
+      <h2 class="profile-name"><%= profile.name %></h2>
+      <% if (user.profile._id.toString() === profile._id.toString()) { %>
+       </p>
           <% if (user.profile._id.toString() === profile._id.toString()) { %>
-            <tr>
-              <td>Google Email:</td>
-              <td><%= user.email %></td>
-            </tr>
+         <a class="text-decoration-none btn btn warning" id="editBtn" href="/profiles/<%= profile._id %>/edit">
+             <button class="btn btn-danger">Edit Profile</button>
+         </a>
+         <br>
+         <br>
+         <a class="text-decoration-none btn btn warning" id="logoutBtn" href="/auth/logout">
+             <button class="btn btn-danger">Logout</button>
+         </a>
           <% } %>
-          <tr>
-            <td>Name:</td>
-            <td><%= profile.name %></td>
-          </tr>
-          <tr>
-            <td>Avatar URL:</td>
-            <td>
-              <a href="<%= profile.avatar %>">
-                <%= profile.avatar.substring(0, 35) %>
-                <% if (profile.avatar.length > 35) { %>
-                ...
-                <% } %>
-              </a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
     </div>
-    <% if (user.profile._id.toString() === profile._id.toString()) { %>
-      <%# This is where we'll add the UI to edit a profile %> 
-      <a 
-        class="btn btn-warning"
-        role="button" 
-        href="/profiles/<%= profile._id %>/edit"
-      >
-        Edit Profile
-      </a>
-      <br>
-      <br>
-      <a 
-        class="btn btn-danger ms-4"
-        role="button" 
-        href="/auth/logout"
-      >
-        Logout
-      </a>
-    <% } %>
-  </section>
+  </article>
+<% } %>
+
+</article>
+<br>
+</main>
   <!-- <% if (user) { %>
     <h1><%= title %></h1>  -->
     <section class="welcome-slides" id="welcome-screen">
@@ -87,6 +124,6 @@
     <img src="" alt="timekeepers">
     <!-- a confetti  -->     
 <!-- <% } %>  -->
-</main>
+
 
 <%- include('../partials/footer') %>
