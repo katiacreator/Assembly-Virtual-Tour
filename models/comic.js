@@ -15,7 +15,7 @@ const comicSchema = new Schema(
     eventsTotal: { type: Number, default: 0 },
     //profile will be assigned as an agent to track this alias after completion of the tour
     agent: [{ type: Schema.Types.ObjectId, ref: "Profile" }],
-    //reference comics Schema which is an array of secret files/comics for this alias
+    //reference alias Schema which is an api
     alias: [{ type: Schema.Types.ObjectId, ref: "Alias" }],
     //this is the marvel character id! will need for comics database to MATCH!
     aliasId: Number,/* same as marvel id for comic character with alias name */

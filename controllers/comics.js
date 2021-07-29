@@ -9,41 +9,58 @@ console.log(`this is my timestamp on comics controller: ${ts}`)
 
 export {
   index,
-  //showCard,
-  // showComic,
+  show,create,update, deleteComic as delete
 }
 
+
+/* START API BUILD */
 function index(req, res){
-  console.log("this comic index is firing!");
-  Alias.find({})
-  .then(aliases => {
-      //console.log('alias: ', alias),
-      res.render('aliases',{
-          title: 'Alias Card Grid TEST!',
-          aliases
-      })
-  })
-  .catch(err => { 
-      console.log(`errorrrrr: ${err}`),
-      res.redirect('/')
-  })
-}
-
-/* 
-function showCard(req, res){
-  console.log("this showCard for comics is firing!");
-  Comic.findById(req.params.id)
-  .then(Comic => {
-      console.log('Comic: ', Comic),
-      res.render('Comices/show',{
-          title: 'Comic Card Details TEST!',
-          Comic
-      })
+  Comic.find({})
+  .then(comic => {
+      res.status(200).json(comic)
   })
   .catch(err => {
-      console.log(`errorrrrr: ${err}`),
-      res.redirect('/')
+      res.json(err)
   })
 }
 
- */
+function show(req, res){
+  Comic.findById(req.params.id)
+  .then(comic => {
+      res.json(comic)
+  })
+  .catch(err => {
+      res.json(err)
+  })
+}
+
+function create(req,res){
+  Comic.create(req.body)
+  .then(comic => {
+      res.json(comic)
+  })
+  .catch(err => {
+      res.json(err)
+  })
+}
+
+function update(req, res) {
+  Comic.findByIdAndUpdate(req.params.id, req.body, {new: true})
+  .then((comic) => {
+    res.json(comic)
+  })
+  .catch(err => {
+      res.json(err)
+  })
+}
+
+function deleteComic(req, res) {
+  Comic.findByIdAndDelete(req.params.id, req.body, {new: true})
+  .then((comic) => {
+    res.json(comic)
+  })
+  .catch(err => {
+      res.json(err)
+  })
+}
+
