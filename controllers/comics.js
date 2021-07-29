@@ -9,69 +9,40 @@ console.log(`this is my timestamp on comics controller: ${ts}`)
 
 export {
   index,
-  showComic,
-  create,
-  deleteComic as delete
+  //showCard,
+  // showComic,
 }
 
-function showComic(req, res) {
-  //req.params.id needs to match marvels character id
+function index(req, res) {
     axios
-    .get(`https://gateway.marvel.com:443/v1/public/characters/${req.params.id}/comics?noVariants=false&limit=5&${ts}&apikey=${process.env.MARVEL_PUBLIC_API_KEY}&hash=${hashKey}`)
+    .get(`https://gateway.marvel.com:443/v1/public/characters/&limit=1&${ts}&apikey=${process.env.MARVEL_PUBLIC_API_KEY}&hash=${hashKey}`)
     .then((response) => {
-      res.render("comics/show", {
-        title: response.data.results.title,
-        format: response.data.results.format,
-        pageCount: response.data.results.pageCount,
-        thumbnail: `${response.data.results.thumbnail.path}${response.data.results.thumbnail.path}`
-      })
+      res.render("comics/", {
+        title: "Comics Results",
+        data: response.data.results
     })
     .catch(err => {
       console.log(err)
       res.redirect('/')
     })
-  }
-
-
-// Alternate method
-// function index(req, res) {
-//   Comic.find({}, function (err, Comic) {
-//     if (err) return res.status(200).json(Comic)
-//     res.status(200).json(Comic)
-//   })
-// }
-
-
-function index(req, res) {
-  Comic.find({})
-  .then(comic => {
-    res.status(200).json(comic)
   })
-  .catch(err => {
-    res.json(err)
-  })
-}
+} 
 
-/* function show(req, res) {
+/* 
+function showCard(req, res){
+  console.log("this showCard for comics is firing!");
   Comic.findById(req.params.id)
-  .then(comic => {
-    res.json(comic)
-  })
-} */
-
-function create(req, res) {
-  Comic.create(req.body)
-  .then(comic => {
-    res.json(comic)
+  .then(Comic => {
+      console.log('Comic: ', Comic),
+      res.render('Comices/show',{
+          title: 'Comic Card Details TEST!',
+          Comic
+      })
   })
   .catch(err => {
-    res.json(err)
+      console.log(`errorrrrr: ${err}`),
+      res.redirect('/')
   })
 }
 
-function deleteComic(req, res) {
-  Comic.findByIdAndDelete(req.params.id)
-  .then(comic => {
-    res.json(comic)
-  })
-}
+ */

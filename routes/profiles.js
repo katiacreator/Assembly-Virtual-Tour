@@ -9,7 +9,7 @@ const router = Router()
 
 router.get('/', isLoggedIn, profilesCtrl.index)
 router.get('/:id', isLoggedIn, profilesCtrl.show)
-router.get('/:id', isLoggedIn, profilesCtrl.showBadge)
+//router.get('/:id', isLoggedIn, profilesCtrl.showBadge)
 router.put('/:id', isLoggedIn, profilesCtrl.update)
 router.get('/:id/edit', isLoggedIn, profilesCtrl.edit)
 
