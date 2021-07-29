@@ -19,7 +19,7 @@ function indexCard(req, res){
     Alias.find({})
     .then(aliases => {
         //console.log('alias: ', alias),
-        res.render('aliases/index',{
+        res.render('aliases',{
             title: 'Alias Card Grid TEST!',
             aliases
         })
@@ -29,14 +29,15 @@ function indexCard(req, res){
         res.redirect('/')
     })
 }
+
 function showCard(req, res){
     console.log("this showCard is firing!");
     Alias.findById(req.params.id)
-    .then(aliases => {
-        //console.log('alias: ', alias),
-        res.render('aliases/:id/show',{
+    .then(alias => {
+        console.log('alias: ', alias),
+        res.render('aliases/show',{
             title: 'Alias Card Details TEST!',
-            aliases
+            alias
         })
     })
     .catch(err => {

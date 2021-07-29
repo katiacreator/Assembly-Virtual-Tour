@@ -9,6 +9,7 @@ import methodOverride from 'method-override'
 import passport from 'passport'
 import { passUserToView } from './middleware/middleware.js'
 
+import { router as apiRouter } from './routes/api.js'
 import { router as indexRouter } from './routes/index.js'
 import { router as authRouter } from './routes/auth.js'
 import { router as comicsRouter } from './routes/comics.js'
@@ -56,6 +57,7 @@ app.use(
   )
 )
 
+app.use('/', apiRouter)
 app.use('/', indexRouter)
 app.use('/auth', authRouter)
 app.use('/comics', comicsRouter)
