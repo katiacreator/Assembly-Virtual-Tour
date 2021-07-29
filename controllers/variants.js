@@ -20,7 +20,7 @@ export {
   function updateVariant(req, res) {
     Variant.findByIdAndUpdate(req.params.id, req.body, {new: true})
     .then( variant => {
-      res.redirect(`/variants/${variant._id}`)
+      res.redirect(`/variants/new/${variant._id}`)
     })
     .catch(err => {
       console.log(err)
@@ -32,7 +32,7 @@ export {
   function deleteVariant(req, res){
     Variant.findByIdAndDelete(req.params.id)
     .then( variant => {
-      res.redirect('/variants')
+      res.redirect('/variants/new')
     })
     .catch(err => {
       console.log(err)
@@ -45,7 +45,7 @@ export {
     req.body.found = !!req.body.found
     Variant.create(req.body)
     .then( variant => {
-      res.redirect('/variants')
+      res.redirect('/variants/new')
     })
     .catch(err => {
       console.log(err)

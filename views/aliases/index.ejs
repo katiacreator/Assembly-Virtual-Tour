@@ -15,6 +15,7 @@
 <!-- <title>Aliases Card Grid</title> -->
 <body>
     <!-- navbar -->
+    <section id="alias-database-text" class="typewriter">These are all key people that are confirmed variants that the TVA is actively tracking. View each file for more information and find out the variants who they are linked to in various timelines. In the pending Multiversal War, they may play a crucial role, benevolent or nefarious, or somewhere in between.</section>
     <!-- write a sentence explaing what this grid/db is doing and how to view it -->
 <main class="grid">
   <% aliases.forEach( alias => { %>
@@ -28,8 +29,6 @@
     <div class="text">
       <h2 class="alias-name"><%=alias.name  %></h2>
       <p class="alias-aliasId">File Number: <%=alias.aliasId  %></p>
-      
-      <!-- when they click this button the image div slides up to reveal the details I CAN DO THIS! -->
       <a class="text-decoration-none btn" id="statsBtn" href="/aliases/<%= alias._id %>">
         <button class="btn btn-danger">View Record</button>
       </a>

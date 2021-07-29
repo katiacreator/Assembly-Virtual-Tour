@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
+    rel="stylesheet" 
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
+    crossorigin="anonymous"
+    >
+    <link rel="stylesheet" href="/stylesheets/grid.css" />
+    <link rel="stylesheet" href="/stylesheets/welcome.css">
   <title>Variant Tracker</title>
 </head>
 <body>
   <h1>Variant Tracker</h1>
-  <p>Create a list of variants you would like to help us track. Check them off your list if we have found them and entered them into our database.</p>
-  <form action="/variants" method="POST">
+  <p>Create a list of variants you would like to help us track. Check them off your list if we have already found them and compiled information into our database. Please note we'll be reviewing your list and taking them into considerations when we give you assignments in the field.</p> 
+  <form action="/variants/new" method="POST">
   <input type="text" 
   name="name" 
-  placeholder="variant Name"
+  placeholder="Variant Name"
   >
   <input type="checkbox" name="found">
   <br>
@@ -22,12 +29,12 @@
   <% variants.forEach(variant => { %> 
     <%= variant.name %><br> 
    - <%= variant.prune ? 'is Found' : 'Not Found' %>  
-   <form action="/variants/<%= variant._id %>?_method=DELETE" method="POST">
+   <form action="/variants/new<%= variant._id %>?_method=DELETE" method="POST">
     <button>X</button>
   </form>
   <% }) %> 
     <% } else { %>
-      <h3>No variants</h3>
+      <h3>No Variants Added</h3>
     <% } %> 
 </body>
 </html>

@@ -17,7 +17,7 @@
     <!-- navbar -->
     <!-- write a sentence explaing what this grid/db is doing and how to view it -->
 <main class="grid">
-   
+  <section id="alias-database-text" class="typewriter">Take note of how many files each person has compiled by the TVA. And these are just the files that we have allowed to be released!</section>
   <article>
      <!-- Image goes here -->
      <% if (alias.image) { %><%# if an image exists %> 
@@ -29,7 +29,7 @@
       <h2 class="alias-name">Name: <%=alias.name  %></h2>
       <p class="alias-aliasId">Id: <%=alias.aliasId  %></p>
       <p class="alias-alias"> Alias Name: <%= alias.alias %></p>
-      <p class="alias-comicId"> Alias Id: <%= alias.comicId %></p>
+      <p class="alias-comicId"> Variant Id: <%= alias.comicId %></p>
       <!-- since this list is long maybe this can go on the back and make this a flip card -->
       <p class="alias-comicsTotal"> Total Comics featuring this Variant# <%= alias.comicsTotal %></p>
       <p class="alias-seriesTotal"> Total Series featuring this Variant# <%= alias.seriesTotal %></p>
