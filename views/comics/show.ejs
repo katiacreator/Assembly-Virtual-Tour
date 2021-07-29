@@ -1,32 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Secret Files Details</title>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
+    rel="stylesheet" 
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
+    crossorigin="anonymous"
+    >
+    <link rel="stylesheet" href="/stylesheets/grid.css" />
+    <link rel="stylesheet" href="/stylesheets/welcome.css">
+    <title><%= title %></title>
+<!-- <title>comics Card Grid</title> -->
 <body>
     <!-- navbar -->
-    <main id="comic-container">
-        <section id="comic-details-text" class="typewriter">These are all the current files we have on this variant. The TVA has been secretly releasing information to the public under the guise that these are simply fictional depictions of rumoured heros and villains, so as to not disturb the collective psyche about not only the existence of these super-beings, but also the existence of multiple existences across timelines.</section>
-        <section id="comic-collection-grid">
-            <!-- for each comic print a profile card limit 5 -->
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="..." alt="Card image cap">Thumbnail Image
-                <div class="card-body">
-                  <h3 class="card-title">Comic Title</h3>
-                  <h5 class="card-text">Comic Format</h5>
-                  <h5 class="card-text">Comic Page Count</h5>
-                  <!-- maybe add description if I can get them all 
-                  <h5 class="card-text">Comic Description</h5>-->
-                 <!--  link to go back variant details variant :id show view -->
-            <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Click to return to variant details">
-                <a class="btn btn-primary btn-lg" href="#" role="button">GO BACK</a>
-              </button>
-                </div>
-              </div>
-        </section>
-    </main>  
+    <!-- write a sentence explaing what this grid/db is doing and how to view it -->
+    <section id="comic-details-text" class="typewriter">These are all the current files we have on this variant. The TVA has been secretly releasing information to the public under the guise that these are simply fictional depictions of rumoured heros and villains, so as to not disturb the collective psyche about not only the existence of these super-beings, but also the existence of multiple existences across timelines.</section>
+    <main class="grid">
+    <article>
+        <!-- Image goes here -->
+        <% if (comic.image) { %><%# if an image exists %> 
+        <img src="<%= comic.image %>" alt="<%= comic.name %>'s comic book image" height="300px" width="300px" />
+        <% } else {%>
+        <img src="◉" alt="placeholder image">
+        <% } %>
+        <div class="text">
+        <h2 class="comic-name">Name: <%=comic.name  %></h2>
+        <p class="comic-comicId">Id: <%=comic.comicId  %></p>
+        <p class="comic-comic"> comic Name: <%= comic.comic %></p>
+        <p class="comic-comicId"> Variant Id: <%= comic.comicId %></p>
+        <!-- since this list is long maybe this can go on the back and make this a flip card -->
+        <p class="comic-comicsTotal"> Total Comics featuring this Variant# <%= comic.comicsTotal %></p>
+        <p class="comic-seriesTotal"> Total Series featuring this Variant# <%= comic.seriesTotal %></p>
+        <p class="comic-storiesTotal"> Total Stories featuring this Variant# <%= comic.storiesTotal %></p>
+        <p class="comic-eventsTotal"> Total Iconic Events featuring this Variant# <%= comic.eventsTotal %></p>
+        <!-- when they click this button the image div slides up to reveal the details I CAN DO THIS! -->
+        <a class="text-decoration-none btn" id="statsBtn" href="/comics">
+            <button class="btn btn-danger">Go Back</button>
+        </a>
+    </article>
+    </main>
 </body>
-</html>
+</html>   

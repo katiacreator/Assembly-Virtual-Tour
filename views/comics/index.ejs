@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link 
@@ -12,37 +12,30 @@
     <link rel="stylesheet" href="/stylesheets/grid.css" />
     <link rel="stylesheet" href="/stylesheets/welcome.css">
     <title><%= title %></title>
-</head>
-    <!-- <title>Comics Card Grid</title> -->
+<!-- <title>comics Card Grid</title> -->
 <body>
-        <!-- navbar -->
-        <!-- write a sentence explaing what this grid/db is doing and how to view it -->
-<section id="comic-database-text" class="typewriter">These are all the secret files the TVA has compiled on the variants. They have been identified as key to helping us track more variants connected to them.</section>
-
-<main class="grid">
-    <% comics.forEach(comic => { %>
-    <!-- user clicks on comic to edit comic from this view thats why this is an a link CHECK THAT THE A TAG IS STARTING IN THE RIGHT PLACE-->
-    <a class="text-decoration-none" href="/comics/<%= comic._id %>">
-    <article>
-        <!-- Image goes here -->
-        <% if (comic.image) { %><%# if an image exists %> 
-    <%= comic.image %> 
-    <% } else {%>
-        <img src="◉" alt="placeholder image">
-        <% } %>
-    <div class="text">
-        <h2 class="comic-name"><%= comic.name %> </h2>
-        <p class="comic-comicId">Id: <%=comic.comicId %> </p>
-        <!-- since this list is long maybe this can go on the back and make this a flip card -->
-        <p class="comic-comicsTotal"> Total Comics featuring this Variant# <%= comic.comicsTotal %></p>
-        <p class="comic-seriesTotal"> Total Series featuring this Variant# <%= comic.seriesTotal %></p>
-        <p class="comic-storiesTotal"> Total Stories featuring this Variant# <%= comic.storiesTotal %></p>
-        <p class="comic-eventsTotal"> Total Iconic Events featuring this Variant# <%= comic.eventsTotal %></p>
-        <button>PLACEHOLDER</button>
-    </div>
-    </article>
-    </a>
-    <% }) %>
-</main>
+    <!-- navbar -->
+    <section id="comic-database-text" class="typewriter">These are all key people that are confirmed variants that the TVA is actively tracking. View each file for more information and find out the variants who they are linked to in various timelines. In the pending Multiversal War, they may play a crucial role, benevolent or nefarious, or somewhere in between.</section>
+    <!-- write a sentence explaing what this grid/db is doing and how to view it -->
+    <main class="grid">
+        <% comics.forEach( comic => { %>
+        <article>
+            <!-- Image goes here -->
+            <% if (comic.image) { %><%# if an image exists %> 
+            <img src="<%= comic.image %>" alt="<%= comic.name %>'s comic book image" height="300px" width="300px" />
+            <% } else {%>
+            <img src="◉" alt="placeholder image">
+            <% } %>
+            <div class="text">
+            <h2 class="comic-name"><%=comic.name  %></h2>
+            <p class="comic-comicId">File Number: <%=comic.comicId  %></p>
+            <a class="text-decoration-none btn" id="statsBtn" href="/comics/<%= comic._id %>">
+                <button class="btn btn-danger">View Record</button>
+            </a>
+            </div>
+        </article>
+        </a>
+        <% }) %>
+    </main>
 </body>
-</html>   
+</html>    

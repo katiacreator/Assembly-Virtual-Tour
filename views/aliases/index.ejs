@@ -17,25 +17,25 @@
     <!-- navbar -->
     <section id="alias-database-text" class="typewriter">These are all key people that are confirmed variants that the TVA is actively tracking. View each file for more information and find out the variants who they are linked to in various timelines. In the pending Multiversal War, they may play a crucial role, benevolent or nefarious, or somewhere in between.</section>
     <!-- write a sentence explaing what this grid/db is doing and how to view it -->
-<main class="grid">
-  <% aliases.forEach( alias => { %>
-  <article>
-     <!-- Image goes here -->
-     <% if (alias.image) { %><%# if an image exists %> 
-    <img src="<%= alias.image %>" alt="<%= alias.name %>'s comic book image" height="300px" width="300px" />
-    <% } else {%>
-      <img src="◉" alt="placeholder image">
-      <% } %>
-    <div class="text">
-      <h2 class="alias-name"><%=alias.name  %></h2>
-      <p class="alias-aliasId">File Number: <%=alias.aliasId  %></p>
-      <a class="text-decoration-none btn" id="statsBtn" href="/aliases/<%= alias._id %>">
-        <button class="btn btn-danger">View Record</button>
-      </a>
-    </div>
-  </article>
-</a>
-  <% }) %>
-</main>
+    <main class="grid">
+        <% aliases.forEach( alias => { %>
+        <article>
+            <!-- Image goes here -->
+            <% if (alias.image) { %><%# if an image exists %> 
+            <img src="<%= alias.image %>" alt="<%= alias.name %>'s comic book image" height="300px" width="300px" />
+            <% } else {%>
+            <img src="◉" alt="placeholder image">
+            <% } %>
+            <div class="text">
+            <h2 class="alias-name"><%=alias.name  %></h2>
+            <p class="alias-aliasId">File Number: <%=alias.aliasId  %></p>
+            <a class="text-decoration-none btn" id="statsBtn" href="/aliases/<%= alias._id %>">
+                <button class="btn btn-danger">View Record</button>
+            </a>
+            </div>
+        </article>
+        </a>
+        <% }) %>
+    </main>
 </body>
-</html>    
+</html>  

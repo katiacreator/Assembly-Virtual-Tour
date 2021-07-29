@@ -16,8 +16,8 @@
 <body>
     <!-- navbar -->
     <!-- write a sentence explaing what this grid/db is doing and how to view it -->
+    <section id="alias-database-text" class="typewriter">Take note of how many files each person has compiled by the TVA. And these are just the files that we have allowed to be released!</section>
 <main class="grid">
-  <section id="alias-database-text" class="typewriter">Take note of how many files each person has compiled by the TVA. And these are just the files that we have allowed to be released!</section>
   <article>
      <!-- Image goes here -->
      <% if (alias.image) { %><%# if an image exists %> 
@@ -39,11 +39,31 @@
       <a class="text-decoration-none btn" id="statsBtn" href="/aliases/">
         <button class="btn btn-danger">Go Back</button>
       </a>
-
-    </div>
+      
   </article>
-</a>
-
+  <article>
+    <!-- **********************VARIANT PROFILES GO HERE THIS IS JUST PLACEHOLDER -->
+    <% if (alias.image) { %><%# if an image exists %> 
+   <img src="<%= alias.image %>" alt="<%= alias.name %>'s comic book image" height="300px" width="300px" />
+   <% } else {%>
+     <img src="◉" alt="placeholder image">
+     <% } %>
+   <div class="text">
+     <h2 class="alias-name">Name: <%=alias.name  %></h2>
+     <p class="alias-aliasId">Id: <%=alias.aliasId  %></p>
+     <p class="alias-alias"> Alias Name: <%= alias.alias %></p>
+     <p class="alias-comicId"> Variant Id: <%= alias.comicId %></p>
+     <!-- since this list is long maybe this can go on the back and make this a flip card -->
+     <p class="alias-comicsTotal"> Total Comics featuring this Variant# <%= alias.comicsTotal %></p>
+     <p class="alias-seriesTotal"> Total Series featuring this Variant# <%= alias.seriesTotal %></p>
+     <p class="alias-storiesTotal"> Total Stories featuring this Variant# <%= alias.storiesTotal %></p>
+     <p class="alias-eventsTotal"> Total Iconic Events featuring this Variant# <%= alias.eventsTotal %></p>
+     <!-- when they click this button the image div slides up to reveal the details I CAN DO THIS! -->
+     <a class="text-decoration-none btn" id="statsBtn" href="/aliases/">
+       <button class="btn btn-danger">Go Back</button>
+     </a>
+     
+ </article>
 </main>
 </body>
 </html>   
