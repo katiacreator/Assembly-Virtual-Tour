@@ -3,6 +3,7 @@
 body{
 	margin:0px;
 	padding:0px;
+	background-color:#a4152c;
 }
 ul{
 	list-style:none;
@@ -17,8 +18,6 @@ a{
 	display:flex;
 	justify-content: center;
 	align-items: center;
-	border: solid purple 8px;
-	margin: -40px auto;
 }
 
 .box{
