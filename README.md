@@ -46,10 +46,20 @@ https://trello.com/b/v60n4Keu/unit-2-project-board
 
 
 ## Languages and Tools Used
-### HTML5, CSS3, ES6, Mongoose, Postman, mongoDB, Node.js and EJS. I also  used the following CSS and JS styling frameworks:
+- ### HTML5,
+- ### CSS3, 
+- ### JS6,
+- ### Mongoose 
+- ### Postman,
+- ### mongoDB, 
+- ### Node.js
+- ### EJS
+- ### Google Oauth 
+- I also  used the following CSS and JS styling frameworks:
 
 - #### google fonts
 - #### terminal.css
+- #### bootstrap
 ___________________________
 ## Questions
 
