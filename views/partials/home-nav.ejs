@@ -1,104 +1,18 @@
-<link rel="stylesheet" href="/stylesheets/grid.css">
-
-<script defer src="/javascripts/welcome.js"></script>
-<title><%= title %></title>
-</head>
-<body>
-<header class="p-3 bg-dark text-white">
-  <nav class="container">
-    <div
-      class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
-    >
-      <ul
-        class="nav col-12 col-lg-auto me-lg-auto mb-2 mb-md-0 justify-content-center"
-      >
-        <li>
-          <!-- <img 
-              src="" 
-              alt="site logo" 
-              class="me-3"
-            > -->
+<div>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">TVA Home</a>
+    <div class="" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="profiles">Fellows</a>
         </li>
-        <li class="d-flex align-items-center mb-2 mb-lg-0 fs-3">
-          <a href="/" class="text-light text-decoration-none">TVA</a>
+        <li class="nav-item active">
+          <a class="nav-link" href="/profiles/<%= user.profile._id %> ">Profile</a>
         </li>
-        <li class="d-flex align-items-center ms-3 mb-2 mb-lg-0">
-          <a href="/profiles" class="text-light text-decoration-none">
-            View Users
-          </a>
+        <li class="nav-item active">
+          <a class="nav-link" href="/auth/logout">Signout</a>
         </li>
-        <% if (user) { %>
-          <li class="d-flex align-items-center ms-3 mb-2 mb-lg-0">
-            <a href="/" class="text-light text-decoration-none">
-              WELCOME<!-- THIS IS WELCOME TO TVA SCREEN -->
-            </a>
-          </li>
-          <li class="d-flex align-items-center ms-3 mb-2 mb-lg-0">
-            <a href="/comics" class="text-light text-decoration-none">
-              ONLY 4 USER LINK2
-            </a>
-          </li>
-          
-        <% } %>
       </ul>
-      <div class="text-end d-flex align-items-center">
-        <% // TODO: Add login logic here %>
-        <% if (user) { %>
-          <div id="profile-dropdown" class="dropdown text-end">
-            <a 
-              id="dropdownUser"
-              href="#"
-              class="d-block link-light text-decoration-none"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              <% if(user?.profile.avatar) {%>
-                <img 
-                  class="rounded-circle avatar-img"
-                  src="<%= user.profile.avatar %>" 
-                  alt="Your avatar"
-                >
-              <% } else { %>
-                <img
-                  class="avatar-img"
-                  src="/images/icons/user-small.png" 
-                  alt="A placeholder avatar"
-                >
-              <% } %> 
-              
-            </a>
-            <ul 
-              class="dropdown-menu bg-secondary" 
-              aria-labelledby="dropdownUser"
-            >
-              <li>
-
-                <a 
-                  href="/profiles/<%= user.profile._id %>" 
-                  class="dropdown-item bg-secondary text-white"
-                >
-                  My Profile
-                </a>
-              </li>
-              <li><hr class="dropdown-divider bg-secondary text-white"></li>
-              <li>
-                <a 
-                  href="/auth/logout" 
-                  class="dropdown-item bg-secondary text-white"
-                >
-                  Sign Out
-                </a>
-              </li>
-            </ul>
-          </div>
-        <% } else { %>
-          <a href="/auth/google" class="siwg-link right item">
-            <button type="submit" class="siwg">
-              <img id="siwg-image" alt="Sign in with Google" />
-            </button>
-          </a>
-        <% } %>
-      </div>
     </div>
   </nav>
-</header>
+</div>
