@@ -10,14 +10,11 @@ let hashKey = md5(`${ts}+${process.env.MARVEL_PRIVATE_API_KEY}+${process.env.MAR
 
 export {
     index,
-    // show,
     createVariant,
-    updateVariant,
     deleteVariant as delete
   }
 
   function index(req, res){
-    console.log("this variant index function is firing!");
     Variant.find({})
     .then(variants => {
         //console.log('variant: ', variant),
@@ -31,28 +28,17 @@ export {
         res.redirect('/')
     })
 }
-  //updates checklist where user has changed checkbox
-function updateVariant(req, res) {
-    Variant.findByIdAndUpdate(req.params.id, req.body, {new: true})
-    .then( variant => {
-      res.redirect(`/variants/${variant._id}`)
-    })
-    .catch(err => {
-      console.log(err)
-      res.redirect('/')
-    })
-}
+
 
 //this deletes a variant off user's checklist
-function deleteVariant(req, res){
-    Variant.findByIdAndDelete(req.params.id)
-    .then( variant => {
-      res.redirect('/variants')
-    })
-    .catch(err => {
-      console.log(err)
-      res.redirect('/')
-    }) 
+function deleteVariant(req, res) {
+  Variant.findByIdAndDelete(req.params.id)
+  .then(variant => {
+    res.redirect('/variants')
+  })
+  .catch(err => {
+    res.redirect('/variants')
+  })
 }
 
   //this creates a variant to be found

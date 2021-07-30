@@ -27,13 +27,16 @@
   <button>Add Variant</button>
   </form>
   <% if (variants.length) { %> 
-  <% variants.forEach(variant => { %> 
-    <%= variant.name %><br> 
-   - <%= variant.prune ? 'is Found' : 'Not Found' %>  
-   <form action="/variants/new<%= variant._id %>?_method=DELETE" method="POST">
-    <button>X</button>
-  </form>
-  <% }) %> 
+ 
+    <ul>
+        <% variants.forEach(variant => { %> 
+          <li>
+            <%= variant.name %> - <%= variant.found ? 'Yes' : 'No' %> 
+            <form action="/variants/<%= variant._id %>?_method=DELETE" method="POST">
+              <button>DELETE</button>
+            </form></li>
+        <% }) %> 
+      </ul>
     <% } else { %>
       <h3>No Variants Added</h3>
     <% } %> 
