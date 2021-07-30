@@ -1,5 +1,5 @@
 body{
-    background-color: grey;
+    background-color: black;
     color: rgb(14, 14, 99);
 }
 
@@ -19,3 +19,20 @@ form {
       border: solid white 1px;
       padding: 20px;
   }
+.jumbotron{
+    margin: 50px;
+}
+
+.lead{
+    border: solid yellow 5px;
+    padding: 20px;
+}
+.nav-item{
+    color: white;
+    font-size: 24px;
+}
+
+.startBtn{
+    background-color: blue;
+    margin-top: -50px;
+}
