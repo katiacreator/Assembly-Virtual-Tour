@@ -15,37 +15,11 @@
 </head>
 
 <body class="terminal">
-<!-- nav -->
-<div>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="/">TVA Home</a>
-    <div class="dropdown text-end">
+  <header class="p-3 bg-dark text-white">
+    <%- include('../partials/home-nav') %>
+    
+  </header>
 
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-        <li class="dropdown-item" type="button"><a class="navbar-brand" href="/">TVA Home</a> </li>
-        <li class="dropdown-item" type="button"><a class="nav-link" href="profiles">Fellows</a></li>
-        <li class="dropdown-item" type="button"><a class="nav-link" href="/profiles/<%= user.profile._id %> ">Profile</a></li>
-        <li class="dropdown-item" type="button"><a class="nav-link" href="/auth/logout">Signout</a></li>
-      </ul>
-    </div>
-    <div class="collapse navbar-collapse" id="navbarText">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="profiles">Fellows</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/profiles/<%= user.profile._id %> ">Profile</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/auth/logout">Signout</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-</div>
 <main class="bg-light">
   <div class="container py-5 px-3">
     <div 

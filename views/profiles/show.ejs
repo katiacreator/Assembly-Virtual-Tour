@@ -12,37 +12,36 @@
   >
   <link rel="stylesheet" href="https://unpkg.com/terminal.css@0.7.2/dist/terminal.min.css" /><link rel="stylesheet" href="https://unpkg.com/terminal.css@0.7.1/dist/terminal.min.css" /><link rel="stylesheet" href="https://unpkg.com/terminal.css@0.7.1/dist/terminal.min.css" />
   <link rel="stylesheet" href="/stylesheets/grid.css">
-  <script defer src="/javascripts/welcome.js"></script>
   <title><%= title %></title>
 </head>
-<body  clas="terminal">
+<body class="terminal">
   <header class="p-3 bg-dark text-white">
     <%- include('../partials/home-nav') %>
     
   </header>
-<main class="grid">
+<main class="bg-light grid">
   <article>
     <% if (profile.avatar) { %>
       <img src="<%= profile.avatar %>" 
         alt="<%= profile.name %>'s avatar"
-        height="300px" width="300px">
+        height="200px" width="200px">
     <% } else {%>
       <img
         src="/images/icons/user.png" 
         alt="A placeholder avatar"
-        height="300px" width="300px">
+        height="200px" width="200px">
     <% } %> 
     <div class="text"> 
       <h2 class="profile-name"><%= profile.name %></h2>
       <% if (user.profile._id.toString() === profile._id.toString()) { %>
        </p>
           <% if (user.profile._id.toString() === profile._id.toString()) { %>
-         <a class="text-decoration-none btn btn warning" id="editBtn" href="/profiles/<%= profile._id %>/edit">
-             <button class="btn btn-danger">Edit Profile</button>
+         <a class="text-decoration-none" id="editBtn" href="/profiles/<%= profile._id %>/edit">
+             <button class="btn btn-light">Edit Profile</button>
          </a>
          <br>
          <br>
-         <a class="text-decoration-none btn btn warning" id="logoutBtn" href="/auth/logout">
+         <a class="text-decoration-none " id="logoutBtn" href="/auth/logout">
              <button class="btn btn-danger">Logout</button>
          </a>
           <% } %>

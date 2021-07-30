@@ -8,12 +8,12 @@ body{
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     grid-gap: 20px;
     align-items: stretch;
-    background-color: brown;
-    border: 2px black dotted;
+    background-color: black;
+    
 }
 .grid  > article {
   border: 1px solid #ccc;
-  border: 2px red dotted;
+ border: solid white 1px;
   box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
 }
 .grid  > article img {
@@ -21,8 +21,8 @@ body{
 }
 .text {
   padding: 0 20px 20px;
-  border: 2px red double;
-  color:turquoise;
+  /* border: 2px red double; */
+  color:white;
 }
 .text > button {
   background: gray;
