@@ -17,13 +17,14 @@ a{
 	display:flex;
 	justify-content: center;
 	align-items: center;
-	border: solid yellow 8px;
+	border: solid purple 8px;
+	margin: -40px auto;
 }
 
 .box{
 	border: solid yellow 2px;
 	width:350px;
-	height:610px;
+	height:650px;
 	background-color:#1e1e26;
 	border-radius: 10px;
 	box-shadow: 2px 10px 12px rgba(0,0,0,0.5);
@@ -44,7 +45,7 @@ a{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	width: 300px;
+	width: 350px;
 }
 .details p{
 	font-family: 'Quicksand', sans-serif;
@@ -52,7 +53,7 @@ a{
 	letter-spacing: 2px;
 	color:#ffffff;
 	text-align: center;
-	margin-top: 10px;
+	/* margin-top: 10px; */
 }
 .marvel{
 	color:#ffffff;
@@ -81,7 +82,7 @@ a{
 @media(max-width:720px){
 	.box{
 		width: 94%;
-		height: 500px;
+		height: 600px;
 	}
 	.model{
 		height:250px;
