@@ -1,52 +1,18 @@
-<header class="p-3 bg-dark text-white">
-  <nav class="container">
-    <div
-      class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
-    >
-      <ul
-        class="nav col-12 col-lg-auto me-lg-auto mb-2 mb-md-0 justify-content-center"
-      >
-        <li class="d-flex align-items-center mb-2 mb-lg-0 fs-3">
-          <a href="/" class="text-light text-decoration-none">
-            <button>TVA</button>HOME
-          </a>
+<div>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">TVA Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="aliases">Variant Database </a>
         </li>
-        <% if (user) { %>
-          <li class="d-flex align-items-center ms-3 mb-2 mb-lg-0">
-            <a href="/aliases" class="text-light text-decoration-none">
-              View Aliases
-            </a>
-          </li>
-          <li class="d-flex align-items-center ms-3 mb-2 mb-lg-0">
-            <a href="/comics" class="text-light text-decoration-none">
-              View Comics
-            </a>
-          </li>
-          <li class="d-flex align-items-center ms-3 mb-2 mb-lg-0">
-              <a 
-                href="/variants" 
-                class="text-light text-decoration-none"
-              >
-                Variant Tracker
-              </a>
-          </li>
-          <li class="d-flex align-items-center ms-3 mb-2 mb-lg-0">
-            <a 
-              href="/auth/logout" 
-              class="text-light text-decoration-none"
-            >
-              Sign Out
-            </a>
-          </li>
+        <li class="nav-item">
+          <a class="nav-link" href="variants/">Variant Tracker</a>
+        </li>
       </ul>
-        <% } else { %>
-          <a href="/auth/google" class="siwg-link right item">
-            <button type="submit" class="siwg">
-              <img id="siwg-image" alt="Sign in with Google" />
-            </button>
-          </a>
-        <% } %>
-      </div>
     </div>
   </nav>
-</header>
+</div>

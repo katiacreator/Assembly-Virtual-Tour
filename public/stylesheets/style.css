@@ -39,7 +39,6 @@ a{
 	height: 350px;
 	max-height: 100%;
 	max-width: 100%;
-	
 }
 .details{
 	display: flex;
@@ -48,17 +47,18 @@ a{
 	width: 300px;
 }
 .details p{
-	font-family: calibri;
+	font-family: 'Quicksand', sans-serif;
 	font-weight: bold;
-	color:#6a6a74;
+	letter-spacing: 2px;
+	color:#ffffff;
 	text-align: center;
-	margin-top: 20px;
+	margin-top: 10px;
 }
 .marvel{
 	color:#ffffff;
 	font-weight: bold;
 	letter-spacing: 2px;
-	font-family: bebas kai;
+	font-family: 'Quicksand', sans-serif;
 	font-size: 25px;
 }
 .logo{
