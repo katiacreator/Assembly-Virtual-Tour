@@ -10,7 +10,7 @@
   integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
   crossorigin="anonymous"
   >
-  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <!-- <link rel="stylesheet" href="/stylesheets/style.css" /> -->
   <link rel="stylesheet" href="/stylesheets/welcome.css">
   <script defer src="/javascripts/welcome.js"></script>
   <title><%= title %></title>
@@ -25,11 +25,11 @@
         class="nav col-12 col-lg-auto me-lg-auto mb-2 mb-md-0 justify-content-center"
       >
         <li>
-          <!-- <img 
-              src="" 
+           <img 
+              src="/images/tva/tva logo.jpg" 
               alt="site logo" 
               class="me-3"
-            > -->
+           />
         </li>
         <li class="d-flex align-items-center mb-2 mb-lg-0 fs-3">
           <a href="/" class="text-light text-decoration-none">
@@ -103,3 +103,26 @@
 </main>
 
 <%- include('partials/footer') %>
+<div class="jumbotron">
+  <h1 class="display-4">Hello, world!</h1>
+  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+  <hr class="my-4">
+  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+  <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+</div>
+
+<nav aria-label="...">
+  <ul class="pagination">
+    <li class="page-item disabled">
+      <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item active" aria-current="page">
+      <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#">Next</a>
+    </li>
+  </ul>
+</nav>

@@ -82,7 +82,7 @@ a{
 @media(max-width:720px){
 	.box{
 		width: 94%;
-		height: 600px;
+		height: 500px;
 	}
 	.model{
 		height:250px;
