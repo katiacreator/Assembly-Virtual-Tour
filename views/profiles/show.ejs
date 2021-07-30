@@ -11,47 +11,60 @@
   crossorigin="anonymous"
   >
   <link rel="stylesheet" href="https://unpkg.com/terminal.css@0.7.2/dist/terminal.min.css" /><link rel="stylesheet" href="https://unpkg.com/terminal.css@0.7.1/dist/terminal.min.css" /><link rel="stylesheet" href="https://unpkg.com/terminal.css@0.7.1/dist/terminal.min.css" />
-  <link rel="stylesheet" href="/stylesheets/grid.css">
-  <title><%= title %></title>
+  <link rel="stylesheet" href="/stylesheets/welcome.css">
 </head>
+
 <body class="terminal">
   <header class="p-3 bg-dark text-white">
     <%- include('../partials/home-nav') %>
     
   </header>
-<main class="bg-light grid">
-  <article>
-    <% if (profile.avatar) { %>
-      <img src="<%= profile.avatar %>" 
-        alt="<%= profile.name %>'s avatar"
-        height="200px" width="200px">
-    <% } else {%>
-      <img
-        src="/images/icons/user.png" 
-        alt="A placeholder avatar"
-        height="200px" width="200px">
-    <% } %> 
-    <div class="text"> 
-      <h2 class="profile-name"><%= profile.name %></h2>
-      <% if (user.profile._id.toString() === profile._id.toString()) { %>
-       </p>
-          <% if (user.profile._id.toString() === profile._id.toString()) { %>
-         <a class="text-decoration-none" id="editBtn" href="/profiles/<%= profile._id %>/edit">
-             <button class="btn btn-light">Edit Profile</button>
-         </a>
-         <br>
-         <br>
-         <a class="text-decoration-none " id="logoutBtn" href="/auth/logout">
-             <button class="btn btn-danger">Logout</button>
-         </a>
-          <% } %>
+
+<main class="bg-light">
+  <div class="container py-5 px-3">
+    <div 
+      class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g5 g-sm-3 g-xxl-5 px-sm-5 px-4">
+        <div class="col">
+          <!-- user clicks on profile to edit profile from this view thats why this is an a link -->
+          <a class="text-decoration-none" href="/profiles/<%= profile._id %>">
+            <div class="card shadow-sm">
+              <% if (profile.avatar) { %>
+                <img
+                  class="card-img-top"
+                  src="<%= profile.avatar %>"
+                  alt="<%= profile.name %>'s avatar"
+                  width="100%"
+                  height="auto"
+                />
+              <% } else {%>
+                <img
+                  class="card-img-top"
+                  src="/images/icons/user.png"
+                  alt="A placeholder avatar"
+                  width="100%"
+                  height="170"
+                />
+              <% } %>
+              <div class="card-body">
+                <p class="card-title fs-5 text-dark mb-0">
+                  <%= profile.name %>
+                </p>
+                  <% if (user.profile._id.toString() === profile._id.toString()) { %>
+                  <a class="text-decoration-none" id="editBtn" href="/profiles/<%= profile._id %>/edit">
+                      <button class="error">Edit Profile</button>
+                  </a>
+                  <br>
+                  <br>
+                  <a class="text-decoration-none " id="logoutBtn" href="/auth/logout">
+                      <button class="btn btn-danger">Logout</button>
+                  </a>
+                   <% } %>
+              </div>
+            </div>
+          </a>
+        </div>
     </div>
-  </article>
-<% } %>
-</article>
-<br>
+  </div>
 </main>
-
-
 
 <%- include('../partials/footer') %>
