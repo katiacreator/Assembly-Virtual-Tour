@@ -2,19 +2,20 @@
 ### [TVA-Tracker](https://tva-tracker.herokuapp.com/)
 ---
 ## What Does This Project Do?
-### This COMPLETELY fictional training module trains users how to manage files and track variants that exist on multiple timelines through a simulation of how a typical TVA agent starts their day tracking variants. It is inspired by the Marvel comicbook and cinematic universe plotlines of What If?, where it is exposed that there are variants of our most beloved heros AND VILLAINS that have totally different stories in other universes and timelines. 
+### This COMPLETELY fictional training module trains users how to manage files and track variants that exist on multiple timelines through a simulation of how a typical TVA agent starts their day tracking variants. It is inspired by the Marvel comicbook and cinematic universe plotlines of What If?, where it is exposed that there are variants of our most beloved heros AND VILLAINS that have totally different stories in other universes and timelines. Any bugs in this app are due to timeline branch chaos! Thanks Loki!
 
 ## Link to Trello Board
 https://trello.com/b/v60n4Keu/unit-2-project-board
 ****************************
 ## Screenshots
+
 ## Home Page
-<img src="
-public/images/home.png">
-__________________
+<img src="public/images/home.png" alt="home page" >
+
+
 ## Fellows
 <img src="public/images/fellows.png" alt="fellows page" >
-__________________
+
 ## Database
 <img src="public/images/database file slider.png" alt="home page">
 
@@ -24,6 +25,7 @@ __________________
 - ### I actually got all my functionality done before doing absolutely any styling. It is ...mostly worth it. It was more rewarding to actually make it all fancy at the END. I like the way it turned out!
 - ### I am confident in my post grad experience building APIs for myself, with others, and for others. I actully cam up with two ideas for APIs that I wished existed.
 - ### This app was tough to build because I had a lot of review of material to catch up on before I could start building. Once I got going, I got going. Once I realized that I burned a lot of time trying to "hack" Marvel's api with their strict requirements, I quickly adapted and just built my own. 
+- ### Styling! I wanted to pay homage to a lot of my experiences as a database manager and the TVA
 
 
 ## Lessons Learned not losses!
@@ -31,9 +33,10 @@ __________________
 
 ## Stretch goals
 ### Maps UI that visually tracks variants in various timelines
-### passkey to access the database
-### build on the api with more references to other "variants" from the comics
+### passkey function to access the database via input-second login
+### build on the api with more references to other "variants" from the comics aka more cards!
 ### connect to your fellows
+### 
 
 ## Credits
 - ### I built the database file card slider following this tutorial: https://www.goingtointernet.com/2020/03/make-marvel-slider.html
