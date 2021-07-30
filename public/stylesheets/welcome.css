@@ -1,6 +1,6 @@
 body{
     background-color: black;
-    color: rgb(14, 14, 99);
+    color: rgb(255, 255, 255);
 }
 
 
@@ -15,17 +15,21 @@ form {
     display: inline;
   }
 
-  .bg-dark{
+.bg-dark{
       border: solid white 1px;
       padding: 20px;
-  }
+}
+
 .jumbotron{
     margin: 50px;
 }
 
 .lead{
-    border: solid yellow 5px;
     padding: 20px;
+}
+
+.show-welcome{
+    border: solid white 4px;
 }
 .nav-item{
     color: white;
