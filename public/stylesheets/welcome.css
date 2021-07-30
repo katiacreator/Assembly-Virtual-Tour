@@ -1,7 +1,21 @@
 body{
     background-color: grey;
-    color: blue;
+    color: rgb(14, 14, 99);
 }
+
+
+.card{
+    /* border: solid blue 3px;  */
+    margin: 0 auto;
+    background-color: grey;
+    
+}
+
 form {
     display: inline;
+  }
+
+  .bg-dark{
+      border: solid white 1px;
+      padding: 20px;
   }
