@@ -17,9 +17,9 @@ a{
 	display:flex;
 	justify-content: center;
 	align-items: center;
-	
 }
 .box{
+	border: solid yellow 2px;
 	width:350px;
 	height:610px;
 	background-color:#1e1e26;
@@ -31,11 +31,13 @@ a{
 	justify-content: space-between;
 	box-sizing: border-box;
 	margin: 20px 10px;
+
 }
 .model{
 	height: 350px;
 	max-height: 100%;
 	max-width: 100%;
+	
 }
 .details{
 	display: flex;
@@ -51,14 +53,17 @@ a{
 	margin-top: 20px;
 }
 .marvel{
-	color:#32323e;
+	color:#ffffff;
 	font-weight: bold;
 	letter-spacing: 2px;
 	font-family: bebas kai;
 	font-size: 25px;
 }
 .logo{
-	height: 60px;
+	/* height: 60px; */
+	font-family: 'Teko', sans-serif;
+	font-size: 3em;
+	color: yellow;
 }
 .box:hover{
 	background-color: #17171d;
