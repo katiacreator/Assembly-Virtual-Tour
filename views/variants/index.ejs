@@ -16,9 +16,10 @@
   <title>Variant Tracker</title>
 </head>
 <body class="terminal">
+  <%- include('../partials/database-nav') %>
   <h1>Variant Tracker</h1>
   <!-- link to aliases database -->
-  <p>Create a list of variants you would like to help us track. Check them off your list if we have already found them and compiled information into our database. Please note we'll be reviewing your list and taking them into considerations when we give you assignments in the field.</p> 
+  <p class="col-lg-6">Create a list of variants you would like to help us track. Check them off your list if we have already found them and compiled information into our database. Please note we'll be reviewing your list and taking them into considerations when we give you assignments in the field.</p> 
   <form action="/variants" method="POST">
   <input type="text" 
   name="name" 

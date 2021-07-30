@@ -10,7 +10,7 @@
   integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
   crossorigin="anonymous"
   >
-  <!-- <link rel="stylesheet" href="/stylesheets/style.css" /> -->
+  <link rel="stylesheet" href="https://unpkg.com/terminal.css@0.7.2/dist/terminal.min.css" /><link rel="stylesheet" href="https://unpkg.com/terminal.css@0.7.1/dist/terminal.min.css" /><link rel="stylesheet" href="https://unpkg.com/terminal.css@0.7.1/dist/terminal.min.css" />
   <link rel="stylesheet" href="/stylesheets/welcome.css">
   <script defer src="/javascripts/welcome.js"></script>
   <title><%= title %></title>
@@ -25,11 +25,11 @@
         class="nav col-12 col-lg-auto me-lg-auto mb-2 mb-md-0 justify-content-center"
       >
         <li>
-           <img 
+          <!--  <img 
               src="/images/tva/tva logo.jpg" 
               alt="site logo" 
               class="me-3"
-           />
+           /> -->
         </li>
         <li class="d-flex align-items-center mb-2 mb-lg-0 fs-3">
           <a href="/" class="text-light text-decoration-none">
@@ -80,49 +80,19 @@
     <!-- <% if (user) { %>
     <h1><%= title %></h1>  -->
     <section class="welcome-slides" id="welcome-screen">
-      <div>
-          <!-- dynamically change on js file-->
-          <p id="welcome-text">Welcome to the Timeline Variance Authority virtual database tour. As a software engineering fellow at General Assembly, you've been hand-picked to join us in managing our infinite database of timeline variants in preparation for the Multiversal War!</p>
-          <div id="buttons">
-          <!-- <p>This is Page 1</p> -->
-          <!-- ADD CLASS HIDE IN STYLESHEET! SO THIS DOESNT SHOW ON LOAD -->
-          <button id="oneBtn" class="hide">1</button>
-          <!-- ADD CLASS HIDE IN STYLESHEET! SO THIS DOESNT SHOW ON LOAD -->
-          <button id="twoBtn" class="show" >2</button>
-          <!-- ADD CLASS HIDE IN STYLESHEET! SO THIS DOESNT SHOW ON LOAD -->
-          <button id="threeBtn" class="hide">3</button>
-          <!-- ADD CLASS HIDE IN STYLESHEET! SO THIS DOESNT SHOW ON LOAD -->
-          <a href="/aliases"class="btn btn-primary startBtn hide" id="startBtn">Let's Get Started!</a>
-          </div>
+      <div class="jumbotron">
+        <h1 class="display-4">Hello, <%= user.name %> </h1>
+        <p class="lead" id="welcome-text">Welcome to the Timeline Variance Authority virtual database tour. As a software engineering fellow at General Assembly, you've been hand-picked to join us in managing our infinite database of timeline variants in preparation for the Multiversal War! You will be assigned an employee badge to begin this tutorial on how to manage top-secret files about a select group of variants. You'll be able to view details about known variants and their aliases. Keep in mind, these files are top-secret so you'll only be able to view select pieces of data. This minimal tour of our database prepare you for your new role as an agent at the Timeline Variance Authority. For All Time. Always.</p>
+        <hr class="my-4">
+        <p class="lead">First, you'll need to create your own varaint tracker list. Then you'll navigate to our top-secret database to see if we have already started tracking your potential variants!</p>
+      
+        <a href="/variants"class="btn btn-primary btn-lg startBtn" id="startBtn" role="button">Let's Get Started!</a>
       </div>
   </section>
-  <!-- put some big logo image here --> 
-  <img src="" alt="timekeepers">
-  <!-- a confetti  -->     
+    
 <!-- <% } %>  -->
 </main>
 
 <%- include('partials/footer') %>
-<div class="jumbotron">
-  <h1 class="display-4">Hello, world!</h1>
-  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-  <hr class="my-4">
-  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-  <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-</div>
 
-<nav aria-label="...">
-  <ul class="pagination">
-    <li class="page-item disabled">
-      <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-    </li>
-    <li class="page-item"><a class="page-link" href="#">1</a></li>
-    <li class="page-item active" aria-current="page">
-      <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-    </li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item">
-      <a class="page-link" href="#">Next</a>
-    </li>
-  </ul>
-</nav>
+

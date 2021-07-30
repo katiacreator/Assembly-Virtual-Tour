@@ -21,7 +21,7 @@ threeBtn.addEventListener("click", goToPage3);
 
 function goToPage1() {
   //console.log("this has been clicked");
-  markup = `<p id="welcome-text">Welcome to the Timeline Variance Authority virtual database tour. As a software engineering fellow at General Assembly, you've been hand-picked to join us in managing our infinite database of timeline variants in preparation for the Multiversal War!TESSSSTTTTT</p>`;
+  markup = `<p id="welcome-text">Welcome to the Timeline Variance Authority virtual database tour. As a software engineering fellow at General Assembly, you've been hand-picked to join us in managing our infinite database of timeline variants in preparation for the Multiversal War!</p>`;
   pEl.innerHTML = markup;
   oneBtn.removeAttribute("class","hide")
   //console.log(oneBtn)
