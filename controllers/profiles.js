@@ -5,16 +5,6 @@ import { Profile } from "../models/profile.js";
 export { index, show, edit, update, showBadge };
 
 
-/* function index(req, res) {
-  Profile.find({})
-  .then(profiles => {
-    res.render('profiles/index', {
-      title: "TVA Agent Profiles",
-      profiles,
-    })
-  })
-} */
-
 //check-this sucessfully rendered my profile card to localhost/profiles
 function index(req, res, next) {
   console.log("index-this was reached")
@@ -42,11 +32,14 @@ function edit(req, res) {
   console.log("edit-this was reached")
   Profile.findById(req.params.id)
     .then((profile) => {
+      //fixed bug so only this user can edit profiles
+      if(req.user.profile._id.toString() === profile._id.toString()){
       res.render("profiles/edit", {
         title: `Editing ${profile.name}'s profile`,
         profile,
       });
-    })
+    }
+  })
     .catch((err) => {
       console.log(err);
       res.redirect("/");
@@ -68,8 +61,7 @@ function show(req, res) {
           profile,
           // Profile of the logged in user
           userProfile,
-          title: `${profile.name}'s profile`,
-          text: "this is a test!"
+          title: `${profile.name}'s profile`
         });
       });
     })
